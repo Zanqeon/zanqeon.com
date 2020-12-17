@@ -1,0 +1,11 @@
+.heading1 {
+  @include h1;
+}
+
+.heading2 {
+  @include h2;
+}
+
+.bodyText {
+  @include bodyText;
+}

@@ -1,0 +1,14 @@
+@import "assets/scss/variables";
+
+$colors: (
+  'color-text-primary': $color-text-primary,
+  'color-text-secondary': $color-text-secondary
+);
+
+@each $name, $color in $colors {
+  .#{$name} {
+    background: $color;
+    height: 5rem;
+    box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.05);
+  }
+}

@@ -1,0 +1,26 @@
+@import "reset";
+//@import "next";
+
+@font-face {
+  font-family: "Moranga";
+  src: url("/static/fonts/moranga/MorangaLight.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Moranga";
+  src: url("/static/fonts/moranga/MorangaRegular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/static/fonts/sohne/SohneBuch.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src: url("/static/fonts/sohne/SohneHalbfett.otf") format("opentype");
+  font-weight: 500;
+}

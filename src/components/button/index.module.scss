@@ -1,0 +1,10 @@
+@import "assets/scss/variables/_color";
+
+.button {
+  color: $color-text-primary;
+}
+
+.disabled {
+  color: $color-text-secondary;
+  pointer-events: none;
+}

@@ -1,0 +1,38 @@
+@mixin h1 {
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+  font-weight: $h1-font-weight;
+  color: $h1-color;
+  font-family: $h1-font-family;
+
+  @include breakpoint(lg) {
+    font-size: $h1-font-size--lg;
+    line-height: $h1-line-height--lg;
+  }
+}
+
+@mixin h2 {
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+  font-weight: $h2-font-weight;
+  color: $h2-color;
+  font-family: $h2-font-family;
+
+  @include breakpoint(lg) {
+    font-size: $h2-font-size--lg;
+    line-height: $h2-line-height--lg;
+  }
+}
+
+@mixin bodyText {
+  font-size: $body-text-font-size;
+  line-height: $body-text-line-height;
+  font-weight: $body-text-font-weight;
+  color: $body-text-color;
+  font-family: $body-text-font-family;
+
+  @include breakpoint(lg) {
+    font-size: $body-text-font-size--lg;
+    line-height: $body-text-line-height--lg;
+  }
+}
