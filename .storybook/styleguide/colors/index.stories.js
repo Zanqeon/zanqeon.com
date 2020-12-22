@@ -11,8 +11,8 @@ const renderColors = () => {
   for (const [key] of Object.entries(styles)) {
     colors.push(
       <Layout.Col columns="xs:6 sm:4 md:2" key={key}>
-        <div className={styles[key]}></div>
-        <p style={{ textAlign: 'center', fontSize:'1.6rem' }}>
+        <div className={styles[key]}/>
+        <p style={{ textAlign: 'center', fontSize: '1.4rem', fontFamily: 'Poppins, sans-serif', fontWeight: '300' }}>
           ${key}
         </p>
       </Layout.Col>

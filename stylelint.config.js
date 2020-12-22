@@ -1,6 +1,13 @@
 module.exports = {
-  extends: 'stylelint-config-standard',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-css-modules'
+  ],
   rules: {
+    'value-keyword-case': [ 'lower', {
+      ignoreFunctions: [ 'index' ],
+      ignoreProperties: [ /\$[a-zA-Z-]+/ ]
+    } ],
     'font-family-name-quotes': 'always-where-recommended',
     'function-url-quotes': 'always',
     'selector-attribute-quotes': 'always',
@@ -30,7 +37,7 @@ module.exports = {
         ]
       }
     ],
-    'selector-class-pattern': '[l|c|u|t|is|has]-[a-z]',
+    'selector-class-pattern': '[a-z]',
     'declaration-block-single-line-max-declarations': 0
   },
   ignoreFiles: [
