@@ -24,7 +24,7 @@ export default function HeaderCategory ({
       </div>
       <h1 className={styles.title}>{title}</h1>
     </>
-)
+  )
 }
 
 HeaderCategory.propTypes = {
