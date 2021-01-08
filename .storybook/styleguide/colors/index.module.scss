@@ -1,8 +1,15 @@
 @import "assets/scss/variables";
 
 $colors: (
-  'color-text-primary': $color-text-primary,
-  'color-text-secondary': $color-text-secondary
+  'color-text-primary': $color-text,
+  'color-line-primary': $color-line,
+  'color-background-primary': $color-background-primary,
+  'color-background-secondary': $color-background-secondary,
+  'color-social--instagram': $color-social--instagram,
+  'color-social--facebook': $color-social--facebook,
+  'color-social--linkedin': $color-social--linkedin,
+  'color-social--github': $color-social--github,
+  'color-image-background': $color-image-background
 );
 
 @each $name, $color in $colors {

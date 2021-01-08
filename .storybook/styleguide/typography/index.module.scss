@@ -6,6 +6,26 @@
   @include h2;
 }
 
+.heading3 {
+  @include h3;
+}
+
 .bodyText {
   @include bodyText;
+}
+
+.bodyLink {
+  @include bodyLink;
+}
+
+.accent {
+  @include accent;
+}
+
+.accentSmall {
+  @include accentSmall;
+}
+
+.accentLarge {
+  @include accentLarge;
 }

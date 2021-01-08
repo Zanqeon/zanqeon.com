@@ -1,38 +1,119 @@
 @mixin h1 {
   font-size: $h1-font-size;
-  line-height: $h1-line-height;
   font-weight: $h1-font-weight;
+  letter-spacing: $h1-letter-spacing;
   color: $h1-color;
   font-family: $h1-font-family;
 
+  @include breakpoint(sm) {
+    font-size: $h1-font-size--sm;
+    letter-spacing: $h1-letter-spacing--sm;
+  }
+
+  @include breakpoint(md) {
+    letter-spacing: $h1-font-size--md;
+    line-height: $h1-letter-spacing--md;
+  }
+
   @include breakpoint(lg) {
     font-size: $h1-font-size--lg;
-    line-height: $h1-line-height--lg;
+    letter-spacing: $h1-letter-spacing--lg;
   }
 }
 
 @mixin h2 {
   font-size: $h2-font-size;
-  line-height: $h2-line-height;
   font-weight: $h2-font-weight;
   color: $h2-color;
   font-family: $h2-font-family;
 
+  @include breakpoint(sm) {
+    font-size: $h2-font-size--sm;
+  }
+
   @include breakpoint(lg) {
     font-size: $h2-font-size--lg;
-    line-height: $h2-line-height--lg;
+  }
+}
+
+@mixin h3 {
+  font-size: $h3-font-size;
+  font-weight: $h3-font-weight;
+  color: $h3-color;
+  font-family: $h3-font-family;
+
+  @include breakpoint(sm) {
+    font-size: $h3-font-size--sm;
+  }
+}
+
+@mixin categoryHeader {
+  font-size: $category-header-font-size;
+  font-weight: $category-header-font-weight;
+  color: $category-header-color;
+  font-family: $category-header-font-family;
+
+  @include breakpoint(sm) {
+    font-size: $category-header-font-size--sm;
+  }
+
+  @include breakpoint(md) {
+    font-size: $category-header-font-size--md;
   }
 }
 
 @mixin bodyText {
   font-size: $body-text-font-size;
-  line-height: $body-text-line-height;
   font-weight: $body-text-font-weight;
   color: $body-text-color;
   font-family: $body-text-font-family;
 
+  @include breakpoint(sm) {
+    font-size: $body-text-font-size--sm;
+  }
+}
+
+@mixin bodyLink {
+  font-size: $body-link-font-size;
+  font-weight: $body-link-font-weight;
+  color: $body-link-color;
+  font-family: $body-link-font-family;
+
+  @include breakpoint(sm) {
+    font-size: $body-text-font-size--sm;
+  }
+}
+
+@mixin accent {
+  font-size: $accent-text-font-size;
+  color: $accent-text-color;
+  font-family: $accent-text-font-family;
+
+  @include breakpoint(sm) {
+    font-size: $accent-text-font-size--sm;
+  }
+
+  @include breakpoint(md) {
+    font-size: $accent-text-font-size--md;
+  }
+
   @include breakpoint(lg) {
-    font-size: $body-text-font-size--lg;
-    line-height: $body-text-line-height--lg;
+    font-size: $accent-text-font-size--lg;
+  }
+}
+
+@mixin accentSmall {
+  font-size: $accent-small-text-font-size;
+  color: $accent-small-text-color;
+  font-family: $accent-small-text-font-family;
+}
+
+@mixin accentLarge {
+  font-size: $accent-large-text-font-size;
+  color: $accent-large-text-color;
+  font-family: $accent-large-text-font-family;
+
+  @include breakpoint(sm) {
+    font-size: $accent-large-text-font-size--sm;
   }
 }

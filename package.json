@@ -12,7 +12,7 @@
     "release:next": "npm run build:next",
     "watch:storybook": "start-storybook -p 3100 -s public",
     "build:storybook": "build-storybook -s public",
-    "generate-icons": "npx @svgr/cli --template ./icon-template.js --index-template ./icon-index-template.js --filename-case kebab --svg-props 'className={className}' --replace-attr-values '#000={fill}' --icon -d ./src/components/icons ./assets/icons"
+    "generate-icons": "svgr --index-template ./scripts/icon-index-template.js --filename-case kebab --ext tsx --icon -d ./src/components/icons ./src/assets/icons && eslint --fix src/components/icons/*"
   },
   "dependencies": {
     "@babel/helper-regex": "^7.10.5",
@@ -52,7 +52,9 @@
     "npm-run-all": "^4.1.5",
     "sass-loader": "^10.1.0",
     "storybook-addon-next-router": "^2.0.2",
-    "stylelint": "^13.2.1",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint": "^13.8.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0"
   }
 }

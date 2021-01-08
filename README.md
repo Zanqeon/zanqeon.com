@@ -114,9 +114,7 @@ If there is a new icon, run the following command
 $ npm run generate-icons
 ```
 The icons will automatically be created for the `./assets/icons` folder to the `./src/components/icons` folder.
-For creating these files there are two template files
-- icon-template.js
+For creating these files there is a template file
 - icon-index-template.js
 
-The `icon-template.js` is used for creating the icons themselves. If changes are needed to all the icons, this would be the place to add the changes.
 The `icon-index-template.js` is used for creating the index file that exports all the icons.
