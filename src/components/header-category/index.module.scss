@@ -1,0 +1,83 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-background-primary;
+  height: 7.8rem;
+  box-shadow: $shadow;
+
+  @each $size, $value in $layout-grid-offset {
+    @include breakpoint($size) {
+      padding-left: $value;
+      padding-right: $value;
+    }
+  }
+
+  @include breakpoint(md) {
+    height: auto;
+    box-shadow: none;
+  }
+}
+
+.link {
+  width: 4.6rem;
+  height: 4.6rem;
+
+  @include breakpoint(sm) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  @include breakpoint(lg) {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.title {
+  @include categoryHeader;
+
+  text-transform: capitalize;
+
+  &::before {
+    content: '// ';
+  }
+}
+
+.icon {
+  height: 4.8rem;
+  width: 4.8rem;
+
+  @include breakpoint(lg) {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.iconClose {
+  path {
+    stroke: #404040;
+  }
+}
+
+.iconLogo {
+  path {
+    fill: #404040;
+  }
+}
+
+.iconLogo:hover {
+  path {
+    fill: $color-line;
+  }
+}
+
+.iconClose:hover {
+  path {
+    stroke: $color-line;
+  }
+}
