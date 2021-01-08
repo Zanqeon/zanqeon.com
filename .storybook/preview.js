@@ -1,9 +1,20 @@
 import React from 'react'
 import { addDecorator } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withNextRouter } from 'storybook-addon-next-router';
+import { withNextRouter } from 'storybook-addon-next-router'
 import 'assets/scss/global.scss'
 import './styleguide/storybook.scss'
+
+export const customBackgrounds = [
+  {
+    name: 'twitter',
+    value: '#00aced'
+  },
+  {
+    name: 'facebook',
+    value: '#3b5998'
+  }
+]
 
 const customViewports = {
   iphone8p: {
@@ -28,7 +39,7 @@ const customViewports = {
       height: '1024px',
       width: '768px'
     },
-    type: 'tablet',
+    type: 'tablet'
   },
   ipad12p: {
     name: 'iPad Pro 12.9in',
@@ -36,7 +47,7 @@ const customViewports = {
       height: '1366px',
       width: '1024px'
     },
-    type: 'tablet',
+    type: 'tablet'
   },
   macbook13: {
     name: 'MacBook Pro 13in',
@@ -54,22 +65,21 @@ const customViewports = {
     },
     type: 'desktop'
   }
-};
+}
 
 addDecorator(
   withNextRouter({
     path: '/',
     asPath: '/',
     query: {},
-    push() {}
+    push () {}
   })
-);
+)
 
 addDecorator(withKnobs)
 
 export const parameters = {
-
   viewport: {
     viewports: customViewports
-  },
+  }
 }

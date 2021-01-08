@@ -1,26 +1,64 @@
-$primary-font-family: "Moranga", sans-serif;
-$secondary-font-family: "Sohne", sans-serif;
+$font-family-primary: 'Poppins', sans-serif;          //body and small headings
+$font-family-secondary: 'Montserrat', sans-serif;     //headings
+$font-family-tertiary: 'Square Font', sans-serif;     //used for year display
+$font-family-quadary: 'Forced Square', sans-serif;    //used for SVG logo
 
-$h1-font-size: 4rem;
-$h1-line-height: 4.8rem;
+$h1-font-size: 10vw;
 $h1-font-weight: 300;
-$h1-color: $color-text-primary;
-$h1-font-family: $primary-font-family;
-$h1-font-size--lg: 5.6rem;
-$h1-line-height--lg: 6.4rem;
+$h1-letter-spacing: -0.1rem;
+$h1-color: $color-text;
+$h1-font-family: $font-family-primary;
+$h1-font-size--sm: 8vw;
+$h1-letter-spacing--sm: -0.2rem;
+$h1-font-size--md: 7vw;
+$h1-letter-spacing--md: -0.3rem;
+$h1-font-size--lg: 10rem;
+$h1-letter-spacing--lg: -0.4rem;
 
-$h2-font-size: 3.2rem;
-$h2-line-height: 4rem;
-$h2-font-weight: 400;
-$h2-color: $color-text-primary;
-$h2-font-family: $primary-font-family;
-$h2-font-size--lg: 4rem;
-$h2-line-height--lg: 4.8rem;
+$h2-font-size: 15.5vw;
+$h2-font-weight: 700;
+$h2-color: $color-text;
+$h2-font-family: $font-family-secondary;
+$h2-font-size--sm: 11rem;
+$h2-font-size--lg: 9.8rem;
 
-$body-text-font-size: 3.2rem;
-$body-text-line-height: 4rem;
-$body-text-font-weight: 400;
-$body-text-color: $color-text-primary;
-$body-text-font-family: $primary-font-family;
-$body-text-font-size--lg: 1.6rem;
-$body-text-line-height--lg: 2.4rem;
+$h3-font-size: 1.4rem;
+$h3-font-weight: 500;
+$h3-color: $color-text;
+$h3-font-family: $font-family-primary;
+$h3-font-size--sm: 1.6rem;
+
+$category-header-font-size: 1.6rem;
+$category-header-font-weight: 500;
+$category-header-color: $color-text;
+$category-header-font-family: $font-family-primary;
+$category-header-font-size--sm: 2rem;
+$category-header-font-size--md: 1.2rem;
+
+$body-text-font-size: 1.2rem;
+$body-text-font-weight: 300;
+$body-text-color: $color-text;
+$body-text-font-family: $font-family-primary;
+$body-text-font-size--sm: 1.4rem;
+
+$body-link-font-size: 1.2rem;
+$body-link-font-weight: 300;
+$body-link-color: $color-text;
+$body-link-font-family: $font-family-primary;
+$body-link-font-size--sm: 1.4rem;
+
+$accent-small-text-font-size: 3.6rem;
+$accent-small-text-color: $color-text;
+$accent-small-text-font-family: $font-family-tertiary;
+
+$accent-text-font-size: 3.6rem;
+$accent-text-color: $color-text;
+$accent-text-font-family: $font-family-tertiary;
+$accent-text-font-size--sm: 5vw;
+$accent-text-font-size--md: 3.5vw;
+$accent-text-font-size--lg: 6.8rem;
+
+$accent-large-text-font-size: 30vw;
+$accent-large-text-color: $color-text;
+$accent-large-text-font-family: $font-family-tertiary;
+$accent-large-text-font-size--sm: 20rem;

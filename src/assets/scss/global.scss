@@ -2,25 +2,20 @@
 //@import "next";
 
 @font-face {
-  font-family: "Moranga";
-  src: url("/static/fonts/moranga/MorangaLight.otf") format("opentype");
+  font-family: 'Square Font';
+  src:
+    url("/static/fonts/squarefont/SquareFont.woff2") format("woff2"),
+    url("/static/fonts/squarefont/SquareFont.woff2") format("woff2");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "Moranga";
-  src: url("/static/fonts/moranga/MorangaRegular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Sohne";
-  src: url("/static/fonts/sohne/SohneBuch.otf") format("opentype");
+  font-family: 'Forced Square';
+  src:
+    url("/static/fonts/forced-square/Forced-Square.woff2") format("woff2"),
+    url("/static/fonts/forced-square/Forced-Square.woff") format("woff");
   font-weight: 300;
 }
 
-@font-face {
-  font-family: "Sohne";
-  src: url("/static/fonts/sohne/SohneHalbfett.otf") format("opentype");
-  font-weight: 500;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap');

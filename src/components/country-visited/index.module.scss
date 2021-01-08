@@ -1,0 +1,22 @@
+.container {
+  @include bodyText;
+
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+    width: 50%;
+    padding: 0 2.4rem;
+    border-left: 1px solid $color-line;
+  }
+}
+
+.countryName {
+  font-weight: 500;
+}
+
+.listItem {
+  &::before {
+    content: '// ';
+  }
+}
