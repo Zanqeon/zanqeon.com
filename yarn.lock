@@ -1071,6 +1071,18 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@contentful/rich-text-react-renderer@^14.1.2":
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-14.1.2.tgz#b7fff19faa0512f034f1717774a0d9b348bb07fc"
+  integrity sha512-UmZ5nNvFXuD4LA2TKDDD52FgzmeMAQUVu5p9UqKDVDG6twHAD4DiWtoXSRM5Bebftlx2UH+UeWHbxIOgF/lV5A==
+  dependencies:
+    "@contentful/rich-text-types" "^14.1.2"
+
+"@contentful/rich-text-types@^14.1.2":
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz#33162fdbf427891122a96030f806ca9a9cf0e844"
+  integrity sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ==
+
 "@emotion/cache@^10.0.27", "@emotion/cache@^10.0.9":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -1319,24 +1331,6 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
     uuid "^8.0.0"
-
-"@storybook/addon-backgrounds@^6.1.11":
-  version "6.1.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-6.1.11.tgz#0fb2f9b30c86910eee85abcadf470e5ad3111a5d"
-  integrity sha512-Ft/9AGOid0VzOY+W318ljEP1JQt9yz4b24dLeQC65wMRYYdg0xC7oJ18PWoq/pJwOZjc6mkHqLHWTWFfOBDRUg==
-  dependencies:
-    "@storybook/addons" "6.1.11"
-    "@storybook/api" "6.1.11"
-    "@storybook/client-logger" "6.1.11"
-    "@storybook/components" "6.1.11"
-    "@storybook/core-events" "6.1.11"
-    "@storybook/theming" "6.1.11"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    regenerator-runtime "^0.13.7"
-    ts-dedent "^2.0.0"
-    util-deprecate "^1.0.2"
 
 "@storybook/addon-knobs@^6.0.21":
   version "6.1.11"
@@ -3830,7 +3824,7 @@ contentful-sdk-core@^6.5.0:
     fast-copy "^2.1.0"
     qs "^6.9.4"
 
-contentful@^7.14.6:
+contentful@^7.15.2:
   version "7.15.2"
   resolved "https://registry.yarnpkg.com/contentful/-/contentful-7.15.2.tgz#caa54e6c5e53f840949f2fef455dc9f52d969b88"
   integrity sha512-hu+hq0mi7mR7TEKdDg+WyId25Oe4lgNi5WsrPKPlCNBKDQ0QOZly8Vyq/9LF2hR4cbn9tTnRWElIU9Q+JNgP7Q==

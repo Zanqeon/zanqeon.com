@@ -67,9 +67,11 @@
   font-weight: $body-text-font-weight;
   color: $body-text-color;
   font-family: $body-text-font-family;
+  line-height: $body-text-line-height;
 
   @include breakpoint(sm) {
     font-size: $body-text-font-size--sm;
+    line-height: $body-text-line-height--sm;
   }
 }
 

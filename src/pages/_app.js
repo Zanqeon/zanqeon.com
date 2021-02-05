@@ -1,7 +1,9 @@
-import "assets/scss/global.scss"
 import React from 'react'
 import PropTypes from 'prop-types'
 import ErrorPage from 'pages/_error'
+
+// Load CSS which will be available on all pages
+import 'assets/scss/global.scss'
 
 export default class MyApp extends React.Component {
   static propTypes = {
@@ -11,8 +13,8 @@ export default class MyApp extends React.Component {
     initialState: PropTypes.object
   }
 
-  render() {
-    const {Component, pageProps, error} = this.props
+  render () {
+    const { Component, pageProps, error } = this.props
 
     return (
       error
