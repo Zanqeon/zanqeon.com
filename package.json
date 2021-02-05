@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "@babel/helper-regex": "^7.10.5",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
     "classnames": "^2.2.6",
-    "contentful": "^7.14.6",
+    "contentful": "^7.15.2",
     "invariant": "^2.2.4",
     "next": "10.0.3",
     "prop-types": "^15.7.2",

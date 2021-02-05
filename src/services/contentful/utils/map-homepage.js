@@ -1,8 +1,23 @@
-
-export function mapHomepage (data) {
+export function mapHomepage ({
+  sys: {
+    id,
+    contentType: {
+      sys: {
+        id: type
+      } = {}
+    } = {}
+  } = {},
+  fields: {
+    title,
+    roleList,
+    richText
+  }
+}) {
   return {
-    id: data.sys.id,
-    type: data.sys.contentType.sys.id,
-    title: data.fields.title
+    id,
+    type,
+    title,
+    roleList,
+    richText
   }
 }

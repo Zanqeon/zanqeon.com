@@ -8,7 +8,7 @@ import {
 } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Components/CountryVisited',
+  title: 'Components/Country Visited',
   decorators: [ withKnobs ]
 }
 

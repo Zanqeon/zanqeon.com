@@ -5,7 +5,7 @@ import HomePageView from 'views/pages/home'
 
 export default function Index ({ page }) {
   return (
-    <HomePageView data={page}/>
+    <HomePageView {...page} />
   )
 }
 
