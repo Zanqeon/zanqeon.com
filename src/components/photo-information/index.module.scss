@@ -11,5 +11,19 @@
 }
 
 .title {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.link {
+  @include bodyLink;
+
+  text-decoration: underline;
+}
+
+.description {
+  margin-top: 2.4rem;
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
 }

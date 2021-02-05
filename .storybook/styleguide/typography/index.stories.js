@@ -17,6 +17,7 @@ export const Headings = () => (
 export const Text = () => (
   <Container>
     <p className={styles.bodyText}>Body text</p>
+    <p className={styles.bodyTextBold}>Body text bold</p>
     <a href="#" className={styles.bodyLink}>Link</a>
   </Container>
 )

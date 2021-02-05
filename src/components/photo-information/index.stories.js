@@ -43,8 +43,20 @@ export const Default = () => {
           },
           {
             nodeType: 'text',
-            value: 'Mauris non vestibulum purus.',
-            marks: [ { type: 'bold' } ],
+            value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet imperdiet dignissim. Phasellus a faucibus dolor.',
+            marks: [],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: ' ',
+            marks: [],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet imperdiet dignissim. Phasellus a faucibus dolor.',
+            marks: [],
             data: {}
           }
         ]
@@ -59,7 +71,7 @@ export const Default = () => {
       aperture={aperture}
       date={date}
       location={location}
-      // description={description}
+      description={description}
     />
   )
 }

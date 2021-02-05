@@ -75,6 +75,12 @@
   }
 }
 
+@mixin bodyTextBold {
+  @include bodyText;
+
+  font-weight: $body-text-bold-font-weight;
+}
+
 @mixin bodyLink {
   font-size: $body-link-font-size;
   font-weight: $body-link-font-weight;

@@ -68,7 +68,7 @@ Row.defaultProps = {
   elementType: 'div'
 }
 
-export function Col ({
+export function Column ({
   children,
   className: givenClassName,
   columns,
@@ -87,7 +87,7 @@ export function Col ({
   )
 }
 
-Col.propTypes = {
+Column.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   columns: PropTypes.string,
@@ -98,12 +98,12 @@ Col.propTypes = {
   ])
 }
 
-Col.defaultProps = {
+Column.defaultProps = {
   elementType: 'div'
 }
 
 export default {
   Container,
   Row,
-  Col
+  Column
 }
