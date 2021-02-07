@@ -111,10 +111,10 @@ These still correspond to the normal styling we usually have.
 For generating these files, we use [svgr](https://www.npmjs.com/package/@svgr/cli).
 If there is a new icon, run the following command
 ```bash
-$ npm run generate-icons
+$ yarn generate-icons
 ```
-The icons will automatically be created for the `./assets/icons` folder to the `./src/components/icons` folder.
-For creating these files there is a template file
-- icon-index-template.js
+The icons components will automatically be created and placed in the `./src/components/icons` folder for all the icons in the `./assets/icons` folder.
+
+For creating these files there is a template file `icon-index-template.js` which can be found in the scripts folder
 
 The `icon-index-template.js` is used for creating the index file that exports all the icons.

@@ -12,13 +12,13 @@ export default function Section ({
   children
 }) {
   const columns = classNames({
-    'xs:8': isInner,
+    'xs:8 md:6': isInner,
     'xs:10': isMiddle,
     'xs:12 md:10': isOuter
   })
 
   const offset = classNames({
-    'xs:2': isInner,
+    'xs:2 md:3': isInner,
     'xs:1': isMiddle,
     'md:1': isOuter
   })

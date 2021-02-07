@@ -1,0 +1,16 @@
+.container {
+  margin-top: 15vw;
+
+  @include breakpoint(md) {
+    margin-top: 12rem;
+  }
+}
+
+.year {
+  @include accent;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
