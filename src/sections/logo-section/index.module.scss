@@ -1,0 +1,15 @@
+.title {
+  //set title to hidden to still work for SEO but not show up on page
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.logo {
+  width: 30%;
+  height: 100%;
+
+  path {
+    fill: $color-text;
+  }
+}

@@ -119,3 +119,19 @@
     font-size: $accent-large-text-font-size--sm;
   }
 }
+
+@mixin role {
+  font-size: $role-font-size;
+  color: $role-color;
+  font-family: $role-font-family;
+  font-weight: $role-font-weight;
+  letter-spacing: $role-letter-spacing;
+
+  @include breakpoint(sm) {
+    font-size: $role-font-size--sm;
+  }
+
+  @include breakpoint(lg) {
+    font-size: $role-font-size--lg;
+  }
+}
