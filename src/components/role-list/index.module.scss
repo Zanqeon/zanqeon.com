@@ -1,0 +1,12 @@
+.item {
+  + .item {
+    .role::before {
+      content: '//';
+      margin-right: 0.3em;
+    }
+  }
+}
+
+.role {
+  @include role;
+}
