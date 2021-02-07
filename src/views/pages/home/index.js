@@ -1,29 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import RichText from 'components/rich-text'
-import LogoSection from 'sections/logo-section'
-import ContactSection from 'sections/contact-section'
+import ContentBlocksSectionView from 'views/sections/content-blocks'
 
 export default function HomePageView ({
-  title,
-  richText,
-  roleList
+  contentBlocks
 }) {
   return (
     <>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
-      <ContactSection />
-      <LogoSection
-        title={title}
-        roles={roleList}
-      />
+      <ContentBlocksSectionView contentBlocks={contentBlocks} />
     </>
   )
 }
 
-HomePageView.propTypes = {}
+HomePageView.propTypes = {
+  contentBlocks: PropTypes.arrayOf(PropTypes.object)
+}
 
 HomePageView.defaultProps = {}

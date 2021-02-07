@@ -14,8 +14,8 @@
     }
   }
 
-  p {
-    margin-bottom: 1.2rem;
+  p + p {
+    margin-top: 1.2rem;
   }
 
   ul > li {
@@ -29,9 +29,9 @@
     top: 1.2rem;
     transform: translateY(-50%);
     content: '';
-    height: 0.3rem;
-    width: 0.3rem;
-    background-color: $color-link;
+    height: 0.1rem;
+    width: 0.6rem;
+    background-color: $color-text;
 
     @include breakpoint(sm) {
       top: 1.4rem;
@@ -52,5 +52,22 @@
     & p {
       display: inline;
     }
+  }
+
+  //Nested list styling
+  li li {
+    padding-left: 1.6rem;
+
+    &::before {
+      content: '//';
+      height: auto;
+      width: auto;
+      background: none;
+      top: 1.2rem;
+    }
+  }
+
+  ul ul {
+    margin-bottom: 0;
   }
 }
