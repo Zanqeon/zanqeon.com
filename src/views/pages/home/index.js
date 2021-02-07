@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import RichText from 'components/rich-text'
-import { Container } from 'components/layout'
+import LogoSection from 'sections/logo-section'
+import ContactSection from 'sections/contact-section'
 
 export default function HomePageView ({
   title,
@@ -14,11 +15,11 @@ export default function HomePageView ({
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
-      <Container>
-        <h1>{title}</h1>
-        <RichText>{richText}</RichText>
-        <h2>{roleList}</h2>
-      </Container>
+      <ContactSection />
+      <LogoSection
+        title={title}
+        roles={roleList}
+      />
     </>
   )
 }

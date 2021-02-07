@@ -12,7 +12,7 @@
     "release:next": "npm run build:next",
     "watch:storybook": "start-storybook -p 3100 -s public",
     "build:storybook": "build-storybook -s public",
-    "generate-icons": "svgr --index-template ./scripts/icon-index-template.js --filename-case kebab --ext tsx --icon -d ./src/components/icons ./src/assets/icons && eslint --fix src/components/icons/*"
+    "generate-icons": "svgr --index-template ./scripts/icon-index-template.js --filename-case kebab --icon -d ./src/components/icons ./src/assets/icons && eslint --fix src/components/icons/*"
   },
   "dependencies": {
     "@babel/helper-regex": "^7.10.5",
