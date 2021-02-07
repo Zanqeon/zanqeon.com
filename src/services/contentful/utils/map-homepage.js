@@ -1,23 +1,9 @@
-export function mapHomepage ({
-  sys: {
-    id,
-    contentType: {
-      sys: {
-        id: type
-      } = {}
-    } = {}
-  } = {},
-  fields: {
-    title,
-    roleList,
-    richText
-  }
-}) {
+import mapContentBlocks from 'services/contentful/utils/map-content-blocks'
+
+export function mapHomepage (data) {
   return {
-    id,
-    type,
-    title,
-    roleList,
-    richText
+    id: data.sys.id,
+    type: data.sys.contentType.sys.id,
+    contentBlocks: mapContentBlocks(data.fields.contentBlocks)
   }
 }

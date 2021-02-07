@@ -3,6 +3,6 @@ export function mapPage (data) {
     id: data.sys.id,
     slug: data.fields.slug,
     type: data.sys.contentType.sys.id,
-    title: data.fields.title,
+    title: data.fields.title
   }
 }
