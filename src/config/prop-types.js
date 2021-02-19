@@ -7,3 +7,16 @@ export const country = PropTypes.shape({
   yearsVisited: PropTypes.arrayOf(PropTypes.number),
   home: PropTypes.bool
 })
+
+export const highlightPhoto = PropTypes.shape({
+  image: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string
+  }),
+  aspectRatio: PropTypes.string,
+  link: PropTypes.shape({
+    href: PropTypes.string,
+    label: PropTypes.string
+  }),
+  isReversed: PropTypes.bool
+})

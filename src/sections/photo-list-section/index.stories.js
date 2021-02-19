@@ -1,151 +1,55 @@
 import React from 'react'
-import { array, withKnobs } from '@storybook/addon-knobs'
-import RichTextSection from './index'
+import { array, text, withKnobs } from '@storybook/addon-knobs'
+import PhotoListSection from './index'
+import HighlightPhoto from 'components/highlight-photo'
+import CategoryHeader from 'components/header-category'
 
 export default {
-  title: 'Sections/Rich Text Section',
+  title: 'Sections/Photo List Section',
   decorators: [ withKnobs ]
 }
 
-const richText = {
-  nodeType: 'document',
-  data: {},
-  content: [ {
-    nodeType: 'unordered-list',
-    content: [ {
-      nodeType: 'list-item',
-      content: [ {
-        nodeType: 'paragraph',
-        content: [ {
-          nodeType: 'text',
-          value: 'Item 1',
-          marks: [],
-          data: {}
-        } ],
-        data: {}
-      }, {
-        nodeType: 'unordered-list',
-        content: [ {
-          nodeType: 'list-item',
-          content: [ {
-            nodeType: 'paragraph',
-            content: [ {
-              nodeType: 'text',
-              value: 'Sub-Item 1',
-              marks: [],
-              data: {}
-            } ],
-            data: {}
-          } ],
-          data: {}
-        } ],
-        data: {}
-      } ],
-      data: {}
-    }, {
-      nodeType: 'list-item',
-      content: [ {
-        nodeType: 'paragraph',
-        content: [ {
-          nodeType: 'text',
-          value: 'Item 2',
-          marks: [],
-          data: {}
-        } ],
-        data: {}
-      }, {
-        nodeType: 'unordered-list',
-        content: [ {
-          nodeType: 'list-item',
-          content: [ {
-            nodeType: 'paragraph',
-            content: [ {
-              nodeType: 'text',
-              value: 'Sub-Item 2',
-              marks: [],
-              data: {}
-            } ],
-            data: {}
-          } ],
-          data: {}
-        } ],
-        data: {}
-      } ],
-      data: {}
-    }, {
-      nodeType: 'list-item',
-      content: [ {
-        nodeType: 'paragraph',
-        content: [ {
-          nodeType: 'text',
-          value: 'Item 3',
-          marks: [],
-          data: {}
-        } ],
-        data: {}
-      }, {
-        nodeType: 'unordered-list',
-        content: [ {
-          nodeType: 'list-item',
-          content: [ {
-            nodeType: 'paragraph',
-            content: [ {
-              nodeType: 'text',
-              value: 'Sub-Item 3',
-              marks: [],
-              data: {}
-            } ],
-            data: {}
-          } ],
-          data: {}
-        } ],
-        data: {}
-      } ],
-      data: {}
-    } ],
-    data: {}
+const items = [
+  {
+    aspectRatio: '2/3',
+    image: {
+      src: 'https://images.unsplash.com/photo-1604537466573-5e94508fd243?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1',
+      alt: 'Alt text'
+    },
+    link: {
+      href: '#',
+      label: 'Landscape Photography'
+    }
   },
   {
-    nodeType: 'paragraph',
-    content: [ {
-      nodeType: 'text',
-      value: '',
-      marks: [],
-      data: {}
-    } ],
-    data: {}
-  } ]
-}
-
-const linkList = [
-  {
-    label: 'Instagram',
-    href: '#',
-    colorType: 'instagram'
+    aspectRatio: '2/3',
+    image: {
+      src: 'https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1',
+      alt: 'Alt text'
+    },
+    link: {
+      href: '#',
+      label: 'Wildlife Photography'
+    }
   },
   {
-    label: 'Facebook',
-    href: '#',
-    colorType: 'facebook'
-  },
-  {
-    label: 'Linkedin',
-    href: '#',
-    colorType: 'linkedin'
-  },
-  {
-    label: 'Github',
-    href: '#',
-    colorType: 'github'
+    aspectRatio: '2/3',
+    image: {
+      src: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1',
+      alt: 'Alt text'
+    },
+    link: {
+      href: '#',
+      label: 'Cityscape Photography'
+    }
   }
 ]
 
 export const Default = () => {
   return (
-    <RichTextSection
-      title="About me"
-      richText={richText}
-      linkList={linkList}
+    <PhotoListSection
+      items={items}
+      title={text('Title', 'Photographs')}
     />
   )
 }

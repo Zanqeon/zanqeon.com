@@ -2,8 +2,54 @@
   padding-top: 2.4rem;
 }
 
-.title {
-  @include h3;
+.titleContainer {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  margin-bottom: 1.2rem;
+.title {
+  @include h2;
+
+  margin-bottom: 1.6rem;
+  z-index: index($elementsHomepage, title);
+  pointer-events: none;
+
+  @include breakpoint(sm) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.titleHyphen {
+  &::after {
+    content: '-';
+  }
+}
+
+.list {
+  z-index: index($elementsHomepage, imageList);
+  margin-top: -4rem;
+
+  @include breakpoint(sm) {
+    padding-bottom: 10vw;
+    margin-top: -6rem;
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: 12rem;
+    margin-top: -10rem;
+  }
+}
+
+.item {
+  + .item {
+    margin-top: 2.4rem;
+
+    @include breakpoint(sm) {
+      margin-top: 4rem;
+    }
+
+    @include breakpoint(md) {
+      margin-top: 8rem;
+    }
+  }
 }
