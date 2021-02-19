@@ -20,3 +20,15 @@ export const highlightPhoto = {
   }),
   isReversed: PropTypes.bool
 }
+
+export const photos = PropTypes.arrayOf(PropTypes.shape({
+  image: PropTypes.shape({
+    alt: PropTypes.string,
+    title: PropTypes.string,
+    src: PropTypes.string
+  }),
+  slug: PropTypes.string,
+  label: PropTypes.string,
+  height: PropTypes.number,
+  width: PropTypes.number
+}))

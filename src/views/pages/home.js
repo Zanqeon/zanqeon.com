@@ -9,7 +9,7 @@ export default function HomePageView ({
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <ContentBlocksSectionView contentBlocks={contentBlocks} />
     </>
