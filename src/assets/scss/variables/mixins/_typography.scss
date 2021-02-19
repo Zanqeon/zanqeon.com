@@ -82,7 +82,19 @@
   font-family: $body-link-font-family;
 
   @include breakpoint(sm) {
-    font-size: $body-text-font-size--sm;
+    font-size: $body-link-font-size--sm;
+  }
+}
+
+@mixin bodyLinkBold {
+  font-size: $body-link-bold-font-size;
+  font-weight: $body-link-bold-font-weight;
+  color: $body-link-bold-color;
+  font-family: $body-link-bold-font-family;
+  letter-spacing: $body-link-bold-letter-spacing;
+
+  @include breakpoint(sm) {
+    font-size: $body-link-bold-font-size--sm;
   }
 }
 

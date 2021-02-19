@@ -19,6 +19,7 @@ export const Text = () => (
   <Container>
     <p className={styles.bodyText}>Body text</p>
     <a href="#" className={styles.bodyLink}>Link</a>
+    <a href="#" className={styles.bodyLinkBold}>Link Bold</a>
   </Container>
 )
 
