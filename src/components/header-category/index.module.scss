@@ -19,6 +19,7 @@
 
   @include breakpoint(md) {
     height: auto;
+    background: none;
     box-shadow: none;
   }
 }
@@ -32,9 +33,35 @@
     height: 4.8rem;
   }
 
+  @include breakpoint(md) {
+    position: fixed;
+    top: 5.6rem;
+  }
+
   @include breakpoint(lg) {
+    top: 12rem;
     height: 6rem;
     width: 6rem;
+  }
+}
+
+.linkLeft {
+  @include breakpoint(md) {
+    left: 5%;
+  }
+
+  @include breakpoint(lg) {
+    left: calc(50% - 63.4rem);
+  }
+}
+
+.linkRight {
+  @include breakpoint(md) {
+    right: 5%;
+  }
+
+  @include breakpoint(lg) {
+    right: calc(50% - 63.4rem);
   }
 }
 
@@ -45,6 +72,18 @@
 
   &::before {
     content: '// ';
+  }
+
+  @include breakpoint(md) {
+    position: fixed;
+    right: calc(95% - 4.8rem);
+    top: 10.8rem;
+    text-align: right;
+  }
+
+  @include breakpoint(lg) {
+    right: calc((50% + 63.4rem) - 6rem); //calculate location from right side so text is right aligned. 50% + 63.4rem is at the start of the ZANQ logo, then subtract the width of the LOGO(6rem) to align it
+    top: 19rem;
   }
 }
 

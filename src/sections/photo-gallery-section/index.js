@@ -11,10 +11,17 @@ export default function PhotoGallerySection ({
 }) {
   return (
     <Layout.Container>
-      <PhotoGallery
-        photos={photos}
-        currentPageSlug={currentPageSlug}
-      />
+      <div className={styles.container}>
+        <Layout.Row>
+          <Layout.Column columns="md:10" offset="md:1">
+            <PhotoGallery
+              photos={photos}
+              currentPageSlug={currentPageSlug}
+            />
+          </Layout.Column>
+        </Layout.Row>
+
+      </div>
     </Layout.Container>
   )
 }
