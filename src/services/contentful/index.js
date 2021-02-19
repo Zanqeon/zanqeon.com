@@ -1,7 +1,5 @@
 import { createClient } from 'contentful'
-import * as Constants from './constants'
-import { mapHomepage } from './utils/map-homepage'
-import { mapPage } from './utils/map-page'
+import safeJsonStringify from 'safe-json-stringify'
 
 let publicClient
 let previewClient
@@ -30,40 +28,27 @@ function getClient ({
   }
 }
 
-export async function fetchHomepage (isPreview) {
+export async function fetchPage (slug, pageType, isPreview) {
   try { // eslint-disable-line no-useless-catch
-    const { items } = await getClient({ isPreview }).getEntries({
-      content_type: Constants.CONTENT_TYPES.HOMEPAGE,
-      limit: 1,
-      include: 10
-    })
+    const { items } = await getClient({ isPreview })
+      .getEntries({
+        content_type: pageType,
+        limit: 1,
+        include: 5,
+        'fields.slug': slug
+      })
     const data = items[0]
     if (!data) {
-      const error = new Error('We could not retrieve the homepage.')
-      error.statusCode = 404
+      return {
+        pageData: null,
+        statusCode: 404
+      }
     }
-
-    return mapHomepage({ ...data })
-  } catch (error) {
-    throw error
-  }
-}
-
-export async function fetchPage (slug, isPreview) {
-  try { // eslint-disable-line no-useless-catch
-    const { items } = await getClient({ isPreview }).getEntries({
-      content_type: Constants.CONTENT_TYPES.PAGE,
-      limit: 1,
-      include: 5,
-      'fields.slug': slug
-    })
-    const data = items[0]
-    if (!data) {
-      const error = new Error(`page with slug ${slug} not found`)
-      error.statusCode = 404
+    const pageData = safeJsonStringify.ensureProperties(data)
+    return {
+      pageData,
+      statusCode: 200
     }
-
-    return mapPage({ ...data })
   } catch (error) {
     throw error
   }

@@ -10,7 +10,6 @@ export default function PhotoListSection ({
   title,
   items
 }) {
-
   const hyphenateString = () => {
     const beforeHyphen = title.slice(0, 5)
     const afterHyphen = title.slice(5, title.length)
@@ -58,6 +57,6 @@ export default function PhotoListSection ({
 }
 
 PhotoListSection.propTypes = {
-  items: PropTypes.arrayOf(defaultPropTypes.highlightPhoto),
-  title: PropTypes.string.isRequired
+  items: PropTypes.arrayOf(PropTypes.shape(defaultPropTypes.highlightPhoto)),
+  title: PropTypes.string
 }

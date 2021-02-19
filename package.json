@@ -24,6 +24,8 @@
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "16.13.1",
+    "react-photo-gallery": "^8.0.0",
+    "safe-json-stringify": "^1.2.0",
     "sass": "^1.26.10",
     "sass-resources-loader": "^2.1.1"
   },

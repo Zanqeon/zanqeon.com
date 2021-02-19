@@ -1,25 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { fetchPage } from 'services/contentful'
-import HomePageView from 'views/pages/home'
 import { CONTENT_TYPES } from 'services/contentful/constants'
-import mapHomepage from 'services/contentful/utils/map-homepage'
+import CategoryPageView from 'views/pages/category'
+import mapCategoryPage from 'services/contentful/utils/map-category-page'
 
-export default function Index ({
+export default function CategoryPage ({
   pageData
 }) {
-  const page = mapHomepage(pageData)
+  const page = mapCategoryPage(pageData)
   return (
-    <HomePageView {...page} />
+    <CategoryPageView {...page} />
   )
 }
 
 export async function getServerSideProps ({ query }) {
-  const slug = '/'
+  const slug = query.slug
   const isPreview = query.isPreview === 'true'
   const { pageData, statusCode } = await fetchPage(
     slug,
-    CONTENT_TYPES.HOMEPAGE,
+    CONTENT_TYPES.CATEGORYPAGE,
     isPreview
   )
   return {
@@ -30,8 +30,6 @@ export async function getServerSideProps ({ query }) {
   }
 }
 
-Index.propTypes = {
-  pageData: PropTypes.shape({
-    title: PropTypes.string
-  })
+CategoryPage.propTypes = {
+  pageData: PropTypes.object
 }
