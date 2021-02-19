@@ -8,7 +8,7 @@ export const country = PropTypes.shape({
   home: PropTypes.bool
 })
 
-export const highlightPhoto = PropTypes.shape({
+export const highlightPhoto = {
   image: PropTypes.shape({
     src: PropTypes.string,
     alt: PropTypes.string
@@ -19,4 +19,4 @@ export const highlightPhoto = PropTypes.shape({
     label: PropTypes.string
   }),
   isReversed: PropTypes.bool
-})
+}

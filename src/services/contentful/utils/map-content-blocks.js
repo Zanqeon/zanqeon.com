@@ -1,12 +1,14 @@
 import mapLogoSection from './map-logo-section'
 import mapContactSection from './map-contact-section'
 import mapRichTextSection from './map-rich-text-section'
+import mapPhotoListsection from './map-photo-list-section'
 
 function mapContentBlock (block, type) {
   const contentBlockMap = {
     logoBlock: mapLogoSection,
     contactBlock: mapContactSection,
-    richTextBlock: mapRichTextSection
+    richTextBlock: mapRichTextSection,
+    photoListSection: mapPhotoListsection
   }
 
   if (!contentBlockMap[type]) return null
