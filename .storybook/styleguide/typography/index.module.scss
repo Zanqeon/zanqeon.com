@@ -18,6 +18,10 @@
   @include bodyLink;
 }
 
+.bodyLinkBold {
+  @include bodyLinkBold;
+}
+
 .accent {
   @include accent;
 }

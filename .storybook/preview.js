@@ -4,6 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withNextRouter } from 'storybook-addon-next-router'
 import 'assets/scss/global.scss'
 import './styleguide/storybook.scss'
+import * as nextImage from "next/image"
 
 export const customBackgrounds = [
   {
@@ -77,6 +78,30 @@ addDecorator(
 )
 
 addDecorator(withKnobs)
+
+//Mock the Nextjs <Image> component so it works in storybook, normal next <Image> component doesn't work
+Object.defineProperty(nextImage, "default", {
+  configurable: true,
+  value: props => <img
+    {...props}
+    style={{
+      visibility: 'visible',
+      position: 'absolute',
+      inset: '0',
+      boxSizing: 'border-box',
+      padding: '0',
+      border: 'none',
+      margin: 'auto',
+      display: 'block',
+      width: '0',
+      height: '0',
+      minWidth: '100%',
+      maxWidth: '100%',
+      minHeight: '100%',
+      maxHeight: '100%'
+    }}
+  />
+})
 
 export const parameters = {
   viewport: {
