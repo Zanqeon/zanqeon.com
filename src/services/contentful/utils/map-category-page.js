@@ -1,16 +1,24 @@
 import mapImage from 'services/contentful/utils/map-image'
 
+const getHeightFromAspectRatio = (aspectRatio) => {
+  return Number(aspectRatio.split('/')[0])
+}
+
+const getWidthFromAspectRatio = (aspectRatio) => {
+  return Number(aspectRatio.split('/')[1])
+}
+
 const mapPhotos = (items) => {
   return items.reduce((photos, photo) => {
     return [
       ...photos,
       {
-        image: mapImage(photo.fields.photograph),
-        slug: {
-          href: photo.fields.photograph.fields.slug,
-          label: photo.fields.photograph.fields.title
-        },
-        aspectRatio: photo.fields.photograph.fields.aspectRatio
+        src: `https:${photo?.fields?.photograph?.fields?.file?.url}`,
+        alt: photo?.fields?.photograph?.fields?.description,
+        slug: photo.fields.slug,
+        label: photo.fields.title,
+        height: getHeightFromAspectRatio(photo.fields.aspectRatio) || 2,
+        width: getWidthFromAspectRatio(photo.fields.aspectRatio) || 3
       }
     ]
   }, [])
@@ -21,6 +29,7 @@ export default function mapCategoryPage (data) {
     id: data.sys.id,
     type: data.sys.contentType.sys.id,
     title: data.fields.title,
-    photos: mapPhotos(data.fields.photos)
+    photos: mapPhotos(data.fields.photos),
+    currentPageSlug: data.fields.slug
   }
 }
