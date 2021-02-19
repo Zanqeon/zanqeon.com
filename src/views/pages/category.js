@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import PhotoGallerySection from 'sections/photo-gallery-section'
 import * as defaultPropTypes from 'config/prop-types'
+import CategoryHeader from 'components/header-category'
 
 export default function CategoryPageView ({
   title,
@@ -14,7 +15,9 @@ export default function CategoryPageView ({
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <h1>{title}</h1>
+      <CategoryHeader
+        title={title}
+      />
       <PhotoGallerySection photos={photos} currentPageSlug={currentPageSlug} />
     </>
   )

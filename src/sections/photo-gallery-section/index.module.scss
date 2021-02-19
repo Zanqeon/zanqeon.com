@@ -1,0 +1,7 @@
+.container {
+  margin-top: 7.8rem;
+
+  @include breakpoint(md) {
+    margin-top: 3.6rem;
+  }
+}
