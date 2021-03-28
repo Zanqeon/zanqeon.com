@@ -7,14 +7,14 @@
     background: $color-background-secondary;
   }
 
-  @each $size, $value in $layout-breakpoints {
+  @each $size, $value in $layout-grid-offset {
     @include breakpoint($size) {
 
       // check which size is smallest, so the background stops scaling at the static max container size instead of looking at the full viewport width.
-      $window-size: min(#{$layout-max-container-width}, 100vw);
+      //$window-size: min(#{$layout-max-container-width}, 100vw);
 
       // the amount of columns that the width of the background will be.
-      $amount-of-columns: 8;
+      //$amount-of-columns: 8;
 
       // The background is calculated by:
       // 1. Taking the full width of the container
@@ -23,17 +23,15 @@
       // This results in a background that has the width of a standard <Layout.Column> component with a width of 8 and an offset on 2 (a centered 8 column)
       // This is then centered as an absolute element so it doesn't care about any content that might be in it. It just visually represents the 8 column width and ines up with it.
 
-      $background-width: calc(((#{$window-size} - (2 * #{map_get($layout-grid-offset, $size)})) + #{map_get($layout-grid-gap, $size)} ) * #{$amount-of-columns} / #{$layout-grid-columns});
+      //$background-width: calc(((#{$window-size} - (2 * #{map_get($layout-grid-offset, $size)})) + #{map_get($layout-grid-gap, $size)} ) * #{$amount-of-columns} / #{$layout-grid-columns});
+      $background-width: calc(83vw - 2 * #{$value});
 
-      @if $size == 'xs' {
-        // amount of columns is hacky (not a whole number) on mobile but works as long as there are no elements that align precisely with the background. It looks nicer though
-        $amount-of-columns: 9.5;
-        $background-width: calc(((#{$window-size} - (2 * #{map_get($layout-grid-offset, $size)})) + #{map_get($layout-grid-gap, $size)} ) * #{$amount-of-columns} / #{$layout-grid-columns});
+      @if $size == 'md' {
+        $background-width: calc(72vw - 2 * #{$value});
       }
 
-      @if $size == 'sm' {
-        $amount-of-columns: 10;
-        $background-width: calc(((#{$window-size} - (2 * #{map_get($layout-grid-offset, $size)})) + #{map_get($layout-grid-gap, $size)} ) * #{$amount-of-columns} / #{$layout-grid-columns});
+      @if $size == 'lg' {
+        $background-width: 88rem;
       }
 
       &::after {
@@ -43,6 +41,7 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
+        height: 100%;
       }
     }
   }

@@ -11,31 +11,20 @@ export default function Section ({
   hasBackground,
   children
 }) {
-  const columns = classNames({
-    'xs:8 md:6': isInner,
-    'xs:10': isMiddle,
-    'xs:12 md:10': isOuter
-  })
-
-  const offset = classNames({
-    'xs:2 md:3': isInner,
-    'xs:1': isMiddle,
-    'md:1': isOuter
-  })
-
   const sectionClassName = classNames(styles.section, {
-    [styles.sectionBackground]: hasBackground
+    [styles.sectionBackground]: hasBackground,
+    [styles.middleSection]: isMiddle,
+    [styles.innerSection]: isInner,
+    [styles.outerSection]: isOuter
   })
 
   return (
     <Layout.Container>
-      <Layout.Row>
-        <Layout.Column offset={offset} columns={columns}>
-          <section className={sectionClassName}>
-            {children}
-          </section>
-        </Layout.Column>
-      </Layout.Row>
+      <section className={sectionClassName}>
+        <div className={styles.content}>
+          {children}
+        </div>
+      </section>
     </Layout.Container>
   )
 }
