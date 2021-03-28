@@ -5,6 +5,7 @@ import RichTextSection from 'sections/rich-text-section'
 import ContactSection from 'sections/contact-section'
 import PhotoListSection from 'sections/photo-list-section'
 import WorldMapSection from 'sections/world-map-section'
+import TitleSection from 'sections/title-section'
 
 function ContentBlockSection ({ data, countriesData }) {
   switch (data.type) {
@@ -18,6 +19,8 @@ function ContentBlockSection ({ data, countriesData }) {
       return <PhotoListSection {...data} />
     case 'worldMapSection':
       return <WorldMapSection countries={countriesData} {...data} />
+    case 'titleSection':
+      return <TitleSection {...data} />
     default:
       return null
   }

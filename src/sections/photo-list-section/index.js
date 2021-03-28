@@ -17,7 +17,7 @@ export default function PhotoListSection ({
     return (
       <>
         <div className={styles.titleHyphen}>{beforeHyphen}</div>
-        <div>{afterHyphen}</div>
+        <div className={styles.titleAfterHyphen}>{afterHyphen}</div>
       </>
     )
   }
