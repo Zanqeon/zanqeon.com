@@ -1,14 +1,9 @@
 import React from 'react'
-import {
-  withKnobs,
-  boolean,
-  text,
-  array
-} from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 import PhotoInformation from './index'
 
 export default {
-  title: 'Components/Photo Information',
+  title: 'Sections/Photo Information Section',
   decorators: [ withKnobs ]
 }
 
@@ -18,9 +13,8 @@ export const Default = () => {
   const aperture = text('Aperture', 'f/9')
   const date = text('Date', 'f/9')
   const location = {
-    country: text('Country', 'New Zealand'),
     href: text('Href', '#'),
-    place: text('Place', 'Lake Wanaka')
+    text: text('Place', 'Lake Wanaka, New Zealand')
   }
   const description = {
     nodeType: 'document',
@@ -59,7 +53,7 @@ export const Default = () => {
       aperture={aperture}
       date={date}
       location={location}
-      // description={description}
+      description={description}
     />
   )
 }
