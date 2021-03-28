@@ -53,3 +53,30 @@ export async function fetchPage (slug, pageType, isPreview) {
     throw error
   }
 }
+
+export async function fetchCountries (contentType, isPreview) {
+  try { // eslint-disable-line no-useless-catch
+    const { items } = await getClient()
+      .getEntries({
+        content_type: contentType,
+        limit: 400
+      })
+
+    const data = items
+
+    if (!data) {
+      return {
+        pageData: null,
+        statusCode: 404
+      }
+    }
+    const pageData = safeJsonStringify.ensureProperties(data)
+    return {
+      pageData,
+      statusCode: 200
+    }
+  } catch (error) {
+    throw error
+  }
+}
+

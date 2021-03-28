@@ -4,8 +4,9 @@ import LogoSection from 'sections/logo-section'
 import RichTextSection from 'sections/rich-text-section'
 import ContactSection from 'sections/contact-section'
 import PhotoListSection from 'sections/photo-list-section'
+import WorldMapSection from 'sections/world-map-section'
 
-function ContentBlockSection ({ data }) {
+function ContentBlockSection ({ data, countriesData }) {
   switch (data.type) {
     case 'logoBlock':
       return <LogoSection {...data} />
@@ -15,6 +16,8 @@ function ContentBlockSection ({ data }) {
       return <ContactSection {...data} />
     case 'photoListSection':
       return <PhotoListSection {...data} />
+    case 'worldMapSection':
+      return <WorldMapSection countries={countriesData} {...data} />
     default:
       return null
   }
@@ -22,11 +25,12 @@ function ContentBlockSection ({ data }) {
 
 ContentBlockSection.propTypes = {
   data: PropTypes.object,
-  pageCategory: PropTypes.string
+  pageCategory: PropTypes.string,
+  countriesData: PropTypes.array
 }
 
-export default function ContentBlocksSectionView ({ contentBlocks }) {
-  return contentBlocks.map(data => <ContentBlockSection data={data} key={data.id} />)
+export default function ContentBlocksSectionView ({ contentBlocks, countriesData }) {
+  return contentBlocks.map(data => <ContentBlockSection data={data} key={data.id} countriesData={countriesData} />)
 }
 ContentBlocksSectionView.propTypes = {
   contentBlocks: PropTypes.array,

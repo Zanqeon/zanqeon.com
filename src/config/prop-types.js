@@ -4,7 +4,7 @@ export const country = PropTypes.shape({
   name: PropTypes.string,
   path: PropTypes.string,
   transform: PropTypes.string,
-  yearsVisited: PropTypes.arrayOf(PropTypes.number),
+  yearsVisited: PropTypes.arrayOf(PropTypes.string),
   home: PropTypes.bool
 })
 

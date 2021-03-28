@@ -1,0 +1,23 @@
+.list {
+  @include breakpoint(md) {
+    width: 70%;
+  }
+}
+
+.item {
+  @include bodyText;
+
+  padding: 0.4rem;
+  display: inline-block;
+  width: 50%;
+
+  @include breakpoint(sm) {
+    width: percentage(1/3);
+  }
+}
+
+.number {
+  @include accentSmall;
+
+  margin-top: 0.4rem;
+}

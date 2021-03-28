@@ -1,14 +1,16 @@
 import mapLogoSection from './map-logo-section'
 import mapContactSection from './map-contact-section'
 import mapRichTextSection from './map-rich-text-section'
-import mapPhotoListsection from './map-photo-list-section'
+import mapPhotoListSection from './map-photo-list-section'
+import mapWorldMapSection from './map-world-map-section'
 
 function mapContentBlock (block, type) {
   const contentBlockMap = {
     logoBlock: mapLogoSection,
     contactBlock: mapContactSection,
     richTextBlock: mapRichTextSection,
-    photoListSection: mapPhotoListsection
+    photoListSection: mapPhotoListSection,
+    worldMapSection: mapWorldMapSection
   }
 
   if (!contentBlockMap[type]) return null

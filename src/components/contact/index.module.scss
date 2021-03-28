@@ -1,7 +1,12 @@
 .container {
   padding-top: 9vw;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: flex-end;
+
+  @include breakpoint(sm) {
+    padding-bottom: 3.2rem;
+  }
 
   @include breakpoint(lg) {
     //when larger than max container, change view-width to static number for scaling

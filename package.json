@@ -7,7 +7,7 @@
     "watch": "run-p watch:*",
     "build": "run-s build:next build:storybook",
     "release": "run-s release:next",
-    "watch:next": "next dev -p 3200",
+    "watch:next": "next dev -p 3300",
     "build:next": "next build",
     "release:next": "npm run build:next",
     "watch:storybook": "start-storybook -p 3100 -s public",

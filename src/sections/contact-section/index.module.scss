@@ -11,6 +11,14 @@
 
   position: absolute;
   top: 0;
-  left: 0;
+  left: 15vw;
   transform: translateY(-50%);
+
+  @include breakpoint(md) {
+    left: 25vw;
+  }
+
+  @include breakpoint(lg) {
+    left: 35rem;
+  }
 }
