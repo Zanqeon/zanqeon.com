@@ -1,0 +1,24 @@
+.container {
+  @include bodyText;
+}
+
+.list {
+  a {
+    text-decoration: underline;
+    color: $color-text;
+  }
+
+  & + .list {
+    margin-top: 3.2rem;
+  }
+}
+
+.title {
+  font-weight: 500;
+}
+
+.descriptionContainer {
+ @include breakpoint(md, max) {
+   margin-top: 3.2rem;
+ }
+}

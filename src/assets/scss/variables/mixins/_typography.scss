@@ -11,8 +11,8 @@
   }
 
   @include breakpoint(md) {
-    letter-spacing: $h1-font-size--md;
-    line-height: $h1-letter-spacing--md;
+    letter-spacing: $h1-letter-spacing--md;
+    font-size:$h1-font-size--md;
   }
 
   @include breakpoint(lg) {
