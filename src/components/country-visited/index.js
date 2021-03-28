@@ -9,15 +9,15 @@ export default function CountryVisited ({
     <div className={styles.container}>
       <div className={styles.countryName}>{country && country.name}</div>
       <ul>
-        {!country?.home && country?.yearsVisited && (
+        {!country?.homeCountry && country?.yearsVisited && (
           country.yearsVisited.map((year) =>
             <li className={styles.listItem} key={year}>
               {'Visited in ' + year}
             </li>)
         )}
-        {country?.home && (
+        {country?.homeCountry && (
           <li className={styles.listItem} key={country.name}>
-            Permanent Residence
+            Country of residence
           </li>
         )}
       </ul>

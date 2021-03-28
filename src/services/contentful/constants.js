@@ -2,7 +2,8 @@ export const CONTENT_TYPES = {
   PAGE: 'contentPage',
   HOMEPAGE: 'homepage',
   CATEGORYPAGE: 'categoryPage',
-  PHOTOPAGE: 'photoPage'
+  PHOTOPAGE: 'photoPage',
+  COUNTRY: 'country'
 }
 
 export const PAGE_SLUGS = [

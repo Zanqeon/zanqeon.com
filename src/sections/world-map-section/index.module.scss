@@ -1,0 +1,44 @@
+.title {
+  @include h3;
+
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+
+  @include breakpoint(md) {
+    margin-bottom: 0;
+  }
+}
+
+.worldMap {
+  @include breakpoint(md, max) {
+    display: none;
+  }
+}
+
+.infoSection {
+  display: flex;
+}
+
+.sumOfVisitedCountries {
+  padding-bottom: 20vw;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.6rem;
+
+  @include breakpoint(sm) {
+    padding-bottom: 12.5rem;
+  }
+}
+
+.bodyText {
+  @include bodyText;
+}
+
+.numberLarge {
+  @include accentLarge;
+
+  position: absolute;
+  bottom: 0;
+  left: -2%;
+  transform: translateY(35%);
+}
