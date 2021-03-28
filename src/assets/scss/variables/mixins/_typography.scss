@@ -126,6 +126,7 @@
   font-size: $accent-large-text-font-size;
   color: $accent-large-text-color;
   font-family: $accent-large-text-font-family;
+  line-height: $accent-large-text-line-height;
 
   @include breakpoint(sm) {
     font-size: $accent-large-text-font-size--sm;

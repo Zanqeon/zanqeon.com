@@ -16,7 +16,7 @@ export default function Country ({
     <path
       name={name}
       fill={fill}
-      stroke="#222"
+      stroke="#333"
       strokeLinejoin="round"
       strokeWidth="1.089"
       fillRule="evenodd"

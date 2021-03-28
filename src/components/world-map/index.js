@@ -24,7 +24,7 @@ export default function WorldMap ({
       {countries.map(country => {
         const fillColour = country?.yearsVisited?.length > 0 || country?.homeCountry
           ? (country.name === activeCountry
-            ? '#535353'
+            ? '#FFFFFF'
             : '#404040'
           )
           : 'none'

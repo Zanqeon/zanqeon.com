@@ -1,7 +1,3 @@
-.container {
-  padding-top: 2.4rem;
-}
-
 .titleContainer {
   display: flex;
   justify-content: flex-end;
@@ -10,18 +6,30 @@
 .title {
   @include h2;
 
-  margin-bottom: 1.6rem;
+  margin: 1.6rem 0;
   z-index: index($elementsHomepage, title);
   pointer-events: none;
 
   @include breakpoint(sm) {
-    margin-bottom: 2.4rem;
+    margin: 2.4rem 0;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 5.6rem;
   }
 }
 
 .titleHyphen {
   &::after {
     content: '-';
+  }
+}
+
+.titleAfterHyphen {
+  margin-top:-0.8rem;
+
+  @include breakpoint(sm) {
+    margin-top:-1.6rem;
   }
 }
 

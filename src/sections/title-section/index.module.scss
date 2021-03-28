@@ -1,0 +1,30 @@
+.container {
+  margin-top: 3.6rem;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.titleHyphen {
+  &::after {
+    content: '-';
+  }
+}
+
+.titleAfterHyphen {
+  margin-top:-0.8rem;
+
+  @include breakpoint(sm) {
+    margin-top:-1.6rem;
+  }
+}
+
+.title {
+  @include h2;
+
+  margin-top: 2.4rem;
+
+  @include breakpoint(sm) {
+    margin-top: 4.8rem;
+  }
+}
