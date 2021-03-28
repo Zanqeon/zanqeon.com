@@ -2,6 +2,45 @@
 
 .section {
   position: relative;
+  height: 100%;
+}
+
+.innerSection {
+  padding: 0 15vw;
+
+  @include breakpoint(sm) {
+    padding: 0 18vw;
+  }
+
+  @include breakpoint(md) {
+    padding: 0 25vw;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 35rem;
+  }
+}
+
+.outerSection {
+  @include breakpoint(md) {
+    padding: 0 7.5vw;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 11rem;
+  }
+}
+
+.middleSection {
+  padding: 0 8.4vw;
+
+  @include breakpoint(md) {
+    padding: 0 13.95vw;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 20rem;
+  }
 }
 
 .sectionBackground {
