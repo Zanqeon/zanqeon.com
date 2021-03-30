@@ -149,3 +149,10 @@
     font-size: $role-font-size--lg;
   }
 }
+
+@mixin navigationPhotoBold {
+  font-size: $navigation-photo-bold-font-size;
+  color: $navigation-photo-bold-color;
+  font-family: $navigation-photo-bold-font-family;
+  font-weight: $navigation-photo-bold-font-weight;
+}

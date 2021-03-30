@@ -20,7 +20,6 @@ export default function mapPhotoPage (data) {
 
     return formattedDate
   }
-
   return {
     id: data.sys.id,
     type: data.sys.contentType.sys.id,
@@ -29,17 +28,19 @@ export default function mapPhotoPage (data) {
       ...mapImage(data.fields.photograph),
       blurHash: data.fields.blurhash
     },
-    location: {
-      text: data.fields.locationText,
-      href: data.fields.locationLink
+    photoInfo: {
+      coordinates: data.fields.coordinates,
+      date: mapDate(data?.fields?.date),
+      iso: data.fields.iso,
+      aperture: data.fields.aperture,
+      shutterSpeed: data.fields.shutterSpeed,
+      description: data.fields.description,
+      location: {
+        label: data.fields.locationText,
+        href: data.fields.locationLink
+      }
     },
     aspectRatio: mapAspectRatio(data.fields.aspectRatio),
-    coordinates: data.fields.coordinates,
-    date: mapDate(data?.fields?.date),
-    iso: data.fields.iso,
-    aperture: data.fields.aperture,
-    shutterSpeed: data.fields.shutterSpeed,
-    description: data.fields.description,
     slug: data.fields.slug
   }
 }

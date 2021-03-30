@@ -126,3 +126,9 @@
     display: none;
   }
 }
+
+.mobileNavigation {
+  @include breakpoint(md) {
+    display: none;
+  }
+}

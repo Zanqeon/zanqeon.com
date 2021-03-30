@@ -13,7 +13,6 @@ function SvgArrowRightStraight (props) {
       <g
         clipPath="url(#arrow-right-straight_svg__clip0)"
         stroke="#000"
-        strokeWidth={1.509}
         strokeLinecap="round"
       >
         <path d="M.755 6.038H38.49M39.245 6.038L33.962.755M39.245 6.038l-5.283 5.283" />

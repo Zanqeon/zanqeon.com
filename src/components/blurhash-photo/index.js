@@ -7,7 +7,8 @@ import styles from './index.module.scss'
 export default function BlurHashPhoto ({
   image,
   aspectRatio,
-  hasNegativeZIndex
+  hasNegativeZIndex,
+  hasAnimatedHover
 }) {
   const [ height, width ] = aspectRatio.split('/')
   const backgroundColor = image.blurHash ? 'none' : '#f4f6f6'
@@ -26,6 +27,7 @@ export default function BlurHashPhoto ({
         />
       )}
       <Image
+        className={hasAnimatedHover ? [ styles.image ] : ''}
         src={image.src}
         alt={image.alt}
         layout="fill"
@@ -41,10 +43,12 @@ BlurHashPhoto.propTypes = {
     blurHash: PropTypes.string
   }),
   aspectRatio: PropTypes.string,
-  hasNegativeZIndex: PropTypes.bool
+  hasNegativeZIndex: PropTypes.bool,
+  hasAnimatedHover: PropTypes.bool
 }
 
 BlurHashPhoto.defaultProps = {
   aspectRatio: '2/3',
-  hasNegativeZIndex: false
+  hasNegativeZIndex: false,
+  hasAnimatedHover: false
 }

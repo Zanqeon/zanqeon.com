@@ -68,6 +68,8 @@
 }
 
 .hideOnMobile {
+  width: 100%;
+
   @include breakpoint(lg, max) {
     display: none;
   }

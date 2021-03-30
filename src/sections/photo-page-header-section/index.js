@@ -10,12 +10,7 @@ export default function PhotoPageHeaderSection ({
   title,
   image,
   aspectRatio,
-  iso,
-  aperture,
-  shutterSpeed,
-  date,
-  location,
-  description,
+  photoInfo,
   categoryInfo,
   currentSlug
 }) {
@@ -43,12 +38,7 @@ export default function PhotoPageHeaderSection ({
           />
           <PhotoInformationSection
             isPortrait
-            iso={iso}
-            aperture={aperture}
-            shutterSpeed={shutterSpeed}
-            date={date}
-            location={location}
-            description={description}
+            {...photoInfo}
           />
         </Layout.Row>
         <div className={styles.hideOnMobile}>
@@ -77,7 +67,7 @@ export default function PhotoPageHeaderSection ({
               />
             </div>
           </Layout.Column>
-          <Layout.Column columns="xs:10 sm:8 md:6" offset="sm:2 md:3 lg:2" className={styles.showOnMobile}>
+          <Layout.Column columns="xs:10 sm:8 md:6" offset="sm:2 md:3" className={styles.showOnMobile}>
             <div className={styles.title}>
               {title}
             </div>
@@ -87,19 +77,14 @@ export default function PhotoPageHeaderSection ({
             currentSlug={currentSlug}
           />
           <div className={styles.hideOnMobile}>
-            <Layout.Column columns="lg:8" offset="lg:5">
+            <Layout.Column columns="lg:7" offset="lg:3">
               <div className={styles.title}>
                 {title}
               </div>
             </Layout.Column>
           </div>
           <PhotoInformationSection
-            iso={iso}
-            aperture={aperture}
-            shutterSpeed={shutterSpeed}
-            date={date}
-            location={location}
-            description={description}
+            {...photoInfo}
           />
         </Layout.Row>
       </Layout.Container>
@@ -130,12 +115,7 @@ export default function PhotoPageHeaderSection ({
           />
         </Layout.Row>
         <PhotoInformationSection
-          iso={iso}
-          aperture={aperture}
-          shutterSpeed={shutterSpeed}
-          date={date}
-          location={location}
-          description={description}
+          {...photoInfo}
         />
       </Layout.Container>
     )
@@ -164,12 +144,7 @@ export default function PhotoPageHeaderSection ({
           />
         </Layout.Row>
         <PhotoInformationSection
-          iso={iso}
-          aperture={aperture}
-          shutterSpeed={shutterSpeed}
-          date={date}
-          location={location}
-          description={description}
+          {...photoInfo}
         />
       </Layout.Container>
     )
@@ -191,7 +166,7 @@ PhotoPageHeaderSection.propTypes = {
   description: PropTypes.string,
   location: PropTypes.shape({
     href: PropTypes.string,
-    text: PropTypes.string
+    label: PropTypes.string
   })
 }
 

@@ -46,5 +46,5 @@ export async function getServerSideProps ({ query }) {
 
 PhotoPage.propTypes = {
   pageData: PropTypes.object,
-  categoryPhotosData: PropTypes.arrayOf(PropTypes.object)
+  categoryPhotosData: PropTypes.object
 }

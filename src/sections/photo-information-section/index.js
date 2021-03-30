@@ -54,12 +54,12 @@ export default function PhotoInformation ({
                 {date}
               </li>
             )}
-            {location?.href && location?.text && (
+            {location?.href && location?.label && (
               <li className={styles.item}>
                 <span className={styles.title}>Location: </span>
                 <Link href={location.href}>
                   <a target="_blank">
-                    {location.text}
+                    {location.label}
                   </a>
                 </Link>
               </li>
@@ -103,26 +103,26 @@ export default function PhotoInformation ({
                   {date}
                 </li>
               )}
-              {location?.href && location?.text && (
+              {location?.href && location?.label && (
                 <li className={styles.item}>
                   <span className={styles.title}>Location: </span>
                   <Link href={location.href}>
                     <a target="_blank">
-                      {location.text}
+                      {location.label}
                     </a>
                   </Link>
                 </li>
               )}
             </ul>
           </Layout.Column>
-          <Layout.Column columns="sm:8 md:4" offset="sm:1 md:0 lg:1">
-            {description && (
+          {description && (
+            <Layout.Column columns="sm:8 md:4" offset="sm:1 md:0 lg:1">
               <div className={descriptionContainerClassName}>
                 <div className={styles.title}>Description:</div>
                 <RichText children={description} />
               </div>
-            )}
-          </Layout.Column>
+            </Layout.Column>
+          )}
         </Layout.Row>
       )}
     </>
@@ -134,10 +134,10 @@ PhotoInformation.propTypes = {
   aperture: PropTypes.string,
   shutterSpeed: PropTypes.string,
   date: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.object,
   location: PropTypes.shape({
     href: PropTypes.string,
-    text: PropTypes.string
+    label: PropTypes.string
   }),
   isPortrait: PropTypes.bool
 }

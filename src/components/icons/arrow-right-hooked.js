@@ -13,13 +13,13 @@ function SvgArrowRightHooked (props) {
       <path
         d="M1 1v10.98h39.216"
         stroke="#000"
-        strokeWidth={2}
+        strokeWidth={1.5}
         strokeLinecap="square"
       />
       <path
         d="M41 11.98l-5.49-5.49M41 11.98l-5.49 5.49"
         stroke="#000"
-        strokeWidth={2}
+        strokeWidth={1.5}
         strokeLinecap="round"
       />
     </svg>
