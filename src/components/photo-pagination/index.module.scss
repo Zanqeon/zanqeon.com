@@ -1,0 +1,67 @@
+.counter {
+  @include bodyText;
+
+  display: none;
+
+  @include breakpoint(md) {
+    position: fixed;
+    bottom: 5rem;
+    left: 6%;
+    display: inline-block;
+    font-size: 16px;
+    z-index: 10;
+  }
+
+  @include breakpoint(lg) {
+    left: calc(50% - 63.4rem);
+    bottom: 12rem;
+  }
+}
+
+.counterTotal {
+  @include bodyText;
+
+  padding-left: 0.75rem;
+  margin-left: 0.3rem;
+  position: relative;
+  display: block;
+  font-weight: 600;
+
+  &::after {
+    position: absolute;
+    content: '/';
+    left: 0;
+  }
+}
+
+.pagination {
+  position: fixed;
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+    bottom: 5rem;
+    right: 3.3%;
+    width: 4.8rem;
+  }
+
+  @include breakpoint(lg) {
+    bottom: 12rem;
+    right: calc(50% - 63.4rem);
+  }
+}
+
+.icon {
+  width: 4.8rem;
+  height: 2rem;
+
+  &:hover {
+    path {
+      stroke: $color-line;
+    }
+  }
+}
+
+.link {
+  display: block;
+}

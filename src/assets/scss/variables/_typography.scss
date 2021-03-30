@@ -5,6 +5,7 @@ $font-family-quadary: 'Forced Square', sans-serif;    //used for SVG logo
 
 $h1-font-size: 10vw;
 $h1-font-weight: 300;
+$h1-line-height: 1;
 $h1-letter-spacing: -0.1rem;
 $h1-color: $color-text;
 $h1-font-family: $font-family-primary;
@@ -37,7 +38,7 @@ $role-font-size--sm: 7vw;
 $role-font-size--lg: 9.8rem;
 
 $category-header-font-size: 1.6rem;
-$category-header-font-weight: 400;
+$category-header-font-weight: 500;
 $category-header-color: $color-text;
 $category-header-font-family: $font-family-primary;
 $category-header-font-size--sm: 2rem;

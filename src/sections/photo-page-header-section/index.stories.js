@@ -9,7 +9,8 @@ export default {
 
 const image = {
   src: 'https://images.unsplash.com/photo-1604537466573-5e94508fd243?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1',
-  alt: 'Moraine lake'
+  alt: 'Moraine lake',
+  blurHash: 'WtKe7jMxS5t7Rjof~qf6V@kCf6WB%2xukCRjozbHbvjsjtbHjFjt'
 }
 
 export const Default = () => {
