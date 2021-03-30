@@ -24,6 +24,7 @@ export default function HighlightPhoto ({
           <Link href={`/${link.href}`}>
             <a>
               <BlurHashPhoto
+                hasAnimatedHover
                 image={image}
                 aspectRatio={aspectRatio}
               />

@@ -2,9 +2,9 @@
   <path
     d="M21 41C32.0457 41 41 32.0457 41 21C41 9.9543 32.0457 1 21 1C9.9543 1 1 9.9543 1 21C1 32.0457 9.9543 41 21 41Z"
     stroke="#000000"
-    stroke-width="1.77711"
+    stroke-width="1.5"
     fill="none"
   />
-    <path d="M17.4788 24.7468L24.7658 17.4795" stroke="#000000" stroke-width="1.77711" stroke-linecap="round"/>
-  <path d="M17.4817 17.4797L24.7692 24.7466" stroke="#000000" stroke-width="1.77711" stroke-linecap="round"/>
+    <path d="M17.4788 24.7468L24.7658 17.4795" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M17.4817 17.4797L24.7692 24.7466" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

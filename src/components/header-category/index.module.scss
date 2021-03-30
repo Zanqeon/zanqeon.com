@@ -9,6 +9,7 @@
   background-color: $color-background-primary;
   height: 7.8rem;
   box-shadow: $shadow;
+  z-index: index($elementsCategoryPage, header);
 
   @each $size, $value in $layout-grid-offset {
     @include breakpoint($size) {

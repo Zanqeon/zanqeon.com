@@ -1,0 +1,44 @@
+.container {
+  margin-top: auto;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-bottom: 2rem;
+  overflow: hidden;
+}
+
+.counter {
+  @include bodyText;
+
+  font-weight: 500;
+}
+
+.icon {
+  width: 6rem;
+  height: auto;
+}
+
+.indicator {
+  @include navigationPhotoBold;
+
+  position: absolute;
+  bottom: 0;
+  transform: translateY(2.4rem);
+}
+
+.indicatorLeft {
+  left: 0;
+}
+
+.indicatorRight {
+  right: 0;
+}

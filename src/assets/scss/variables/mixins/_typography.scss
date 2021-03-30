@@ -4,6 +4,7 @@
   letter-spacing: $h1-letter-spacing;
   color: $h1-color;
   font-family: $h1-font-family;
+  line-height: $h1-line-height;
 
   @include breakpoint(sm) {
     font-size: $h1-font-size--sm;
@@ -12,7 +13,7 @@
 
   @include breakpoint(md) {
     letter-spacing: $h1-letter-spacing--md;
-    font-size:$h1-font-size--md;
+    font-size: $h1-font-size--md;
   }
 
   @include breakpoint(lg) {
@@ -147,4 +148,11 @@
   @include breakpoint(lg) {
     font-size: $role-font-size--lg;
   }
+}
+
+@mixin navigationPhotoBold {
+  font-size: $navigation-photo-bold-font-size;
+  color: $navigation-photo-bold-color;
+  font-family: $navigation-photo-bold-font-family;
+  font-weight: $navigation-photo-bold-font-weight;
 }

@@ -1,8 +1,8 @@
-.container {
-  @include bodyText;
-}
-
 .list {
+  @include bodyText;
+
+  margin-top: 2.4rem;
+
   a {
     text-decoration: underline;
     color: $color-text;
@@ -13,12 +13,32 @@
   }
 }
 
+.listPortrait {
+  @include breakpoint(lg) {
+    margin-top: 12rem;
+  }
+}
+
 .title {
   font-weight: 500;
 }
 
 .descriptionContainer {
- @include breakpoint(md, max) {
-   margin-top: 3.2rem;
- }
+  @include bodyText;
+
+  @include breakpoint(md, max) {
+    margin-top: 3.2rem;
+  }
+}
+
+.descriptionContainerAlternative {
+  @include breakpoint(md) {
+    margin-top: 2.4rem;
+  }
+}
+
+.descriptionContainerSquare {
+  @include breakpoint(md) {
+    margin-top: 2.4rem;
+  }
 }
