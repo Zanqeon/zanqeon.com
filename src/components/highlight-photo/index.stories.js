@@ -14,6 +14,7 @@ export const Default = () => {
       image={{
         src: 'https://images.unsplash.com/photo-1604537466573-5e94508fd243?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1',
         alt: text('Alt', 'Photo of that wanaka tree in new zealand'),
+        blurHash: text('Blurhash', 'WtKe7jMxS5t7Rjof~qf6V@kCf6WB%2xukCRjozbHbvjsjtbHjFjt'),
       }}
       link={{
         href: text('Href', '#'),

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import PhotoInformationSection from 'sections/photo-information-section'
 import PhotoPageHeaderSection from 'sections/photo-page-header-section'
 
 export default function PhotoPageView ({
@@ -14,7 +13,9 @@ export default function PhotoPageView ({
   coordinates,
   image,
   date,
-  aspectRatio
+  aspectRatio,
+  categoryInfo,
+  slug
 }) {
   return (
     <>
@@ -25,14 +26,15 @@ export default function PhotoPageView ({
         title={title}
         image={image}
         aspectRatio={aspectRatio}
-      />
-      <PhotoInformationSection
         iso={iso}
-        aperture={aperture}
         shutterSpeed={shutterSpeed}
-        date={date}
-        location={location}
+        aperture={aperture}
         description={description}
+        location={location}
+        coordinates={coordinates}
+        date={date}
+        categoryInfo={categoryInfo}
+        currentSlug={slug}
       />
     </>
   )
@@ -54,5 +56,6 @@ PhotoPageView.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string,
     alt: PropTypes.string
-  })
+  }),
+  categoryInfo: PropTypes.object
 }

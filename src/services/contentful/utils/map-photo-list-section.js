@@ -8,7 +8,10 @@ export default function mapPhotolistSection (data) {
       return [
         ...photos,
         {
-          image: mapImage(photo.fields.image),
+          image: {
+            ...mapImage(photo?.fields?.photo?.fields?.photograph),
+            blurHash: photo?.fields?.photo?.fields.blurhash
+          },
           link: {
             href: photo.fields.pageLink.fields.slug,
             label: photo.fields.label

@@ -1,10 +1,10 @@
 import React from 'react'
 import * as defaultPropTypes from 'config/prop-types'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from './index.module.scss'
 import Layout from 'components/layout'
 import classNames from 'classnames'
+import BlurHashPhoto from 'components/blurhash-photo'
 
 export default function HighlightPhoto ({
   image,
@@ -23,14 +23,10 @@ export default function HighlightPhoto ({
         <Layout.Column columns="xs:11 sm:9 md:8" offset={isReversed ? 'xs:1 sm:3 md:0 lg:1' : 'md:1'}>
           <Link href={`/${link.href}`}>
             <a>
-              {/* Using paddingTop to prevent layout shift when photo is loaded in. */}
-              <div className={styles.imageContainer} style={{ paddingTop: `calc(100% * ${aspectRatio})` }}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  layout="fill"
-                />
-              </div>
+              <BlurHashPhoto
+                image={image}
+                aspectRatio={aspectRatio}
+              />
             </a>
           </Link>
         </Layout.Column>
