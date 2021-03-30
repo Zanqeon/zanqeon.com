@@ -1,9 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useState
+} from 'react'
 import PropTypes from 'prop-types'
 import styles from './index.module.scss'
 import Link from 'next/link'
 import Gallery from 'react-photo-gallery'
 import * as defaultPropTypes from 'config/prop-types'
+import { BlurhashCanvas } from 'react-blurhash'
 
 function GalleryItem ({
   item,
@@ -17,7 +22,8 @@ function GalleryItem ({
         style={{
           height: item.height,
           width: item.width,
-          margin: margin
+          margin: margin,
+          backgroundColor: item.blurHash ? '' : '#76e0ff'
         }}
       >
         <img
@@ -25,6 +31,15 @@ function GalleryItem ({
           src={item.src}
           alt={item.alt}
         />
+        {item?.blurHash?.length > 6 && (
+          <BlurhashCanvas
+            className={styles.blurhash}
+            hash={item.blurHash}
+            width={Math.round(0.05 * item.width)}
+            height={Math.round(0.05 * item.height)}
+            punch={1}
+          />
+        )}
       </a>
     </Link>
   )
@@ -66,16 +81,35 @@ export default function PhotoGallery ({
     []
   )
 
-  // TODO: return placeholder gallery to show on server side so google can see it (maybe show image data but set on visibility hidden)
-  if (!showGallery) return null
+  // placeholder gallery to show on server side so google can see the data
+  if (!showGallery) {
+    return (
+      <ul className={styles.galleryPlaceholder}>
+        {photos.map(photo => {
+          return (
+            <li key={photo.src}>
+              <a href={`/${currentPageSlug}/${photo.slug}`}>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                />
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }
 
   if (showGallery) {
     return (
-      <Gallery
-        photos={photos}
-        renderImage={imageRenderer}
-        {...config}
-      />
+      <div className={styles.container}>
+        <Gallery
+          photos={photos}
+          renderImage={imageRenderer}
+          {...config}
+        />
+      </div>
     )
   }
 }
