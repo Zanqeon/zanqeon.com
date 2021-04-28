@@ -5,6 +5,7 @@
 
   @include breakpoint(md) {
     position: fixed;
+    pointer-events: none;
     top: 30rem;
     right: 6%;
     z-index: index($elementsHomepage, sectionIndicator);
