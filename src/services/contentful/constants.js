@@ -3,7 +3,8 @@ export const CONTENT_TYPES = {
   HOMEPAGE: 'homepage',
   CATEGORYPAGE: 'categoryPage',
   PHOTOPAGE: 'photoPage',
-  COUNTRY: 'country'
+  COUNTRY: 'country',
+  SECTION_INDICATOR: 'sectionIndicatorList'
 }
 
 export const PAGE_SLUGS = [

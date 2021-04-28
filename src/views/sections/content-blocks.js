@@ -6,6 +6,7 @@ import ContactSection from 'sections/contact-section'
 import PhotoListSection from 'sections/photo-list-section'
 import WorldMapSection from 'sections/world-map-section'
 import TitleSection from 'sections/title-section'
+import { InView } from 'react-intersection-observer'
 
 function ContentBlockSection ({ data, countriesData }) {
   switch (data.type) {
@@ -32,9 +33,22 @@ ContentBlockSection.propTypes = {
   countriesData: PropTypes.array
 }
 
-export default function ContentBlocksSectionView ({ contentBlocks, countriesData }) {
-  return contentBlocks.map(data => <ContentBlockSection data={data} key={data.id} countriesData={countriesData} />)
+const handleOnChange = (data) => {
+  if (data.onChangeInView) {
+    data.onChangeInView(data.id)
+  }
 }
+
+export default function ContentBlocksSectionView ({ contentBlocks, countriesData }) {
+  return contentBlocks.map(data => {
+    return (
+      <InView as="div" onChange={(inView) => inView && handleOnChange(data)} key={data.id} {...data.options}>
+        <ContentBlockSection data={data} countriesData={countriesData} />
+      </InView>
+    )
+  })
+}
+
 ContentBlocksSectionView.propTypes = {
   contentBlocks: PropTypes.array,
   pageCategory: PropTypes.string
