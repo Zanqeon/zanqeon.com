@@ -80,3 +80,29 @@ export async function fetchCountries (contentType, isPreview) {
   }
 }
 
+export async function fetchData (contentType, isPreview) {
+  try { // eslint-disable-line no-useless-catch
+    const { items } = await getClient()
+      .getEntries({
+        content_type: contentType,
+        limit: 1,
+        include: 5
+      })
+
+    const data = items[0]
+
+    if (!data) {
+      return {
+        pageData: null,
+        statusCode: 404
+      }
+    }
+    const pageData = safeJsonStringify.ensureProperties(data)
+    return {
+      pageData,
+      statusCode: 200
+    }
+  } catch (error) {
+    throw error
+  }
+}

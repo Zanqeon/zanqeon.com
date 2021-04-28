@@ -11,6 +11,10 @@
   & + .list {
     margin-top: 3.2rem;
   }
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
 }
 
 .listPortrait {
