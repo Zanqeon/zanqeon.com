@@ -9,7 +9,8 @@ export default function BlurHashPhoto ({
   aspectRatio,
   hasNegativeZIndex,
   hasAnimatedHover,
-  highQuality
+  highQuality,
+  isLazyLoading
 }) {
   const [ height, width ] = aspectRatio.split('/')
   const backgroundColor = image.blurHash ? 'none' : '#f4f6f6'
@@ -33,6 +34,7 @@ export default function BlurHashPhoto ({
         alt={image.alt}
         layout="fill"
         quality={highQuality ? 85 : 75}
+        loading={isLazyLoading ? 'lazy' : 'priority'}
       />
     </div>
   )
