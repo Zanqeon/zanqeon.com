@@ -106,3 +106,39 @@ export async function fetchData (contentType, isPreview) {
     throw error
   }
 }
+
+export async function fetchPaths (page) {
+  try { // eslint-disable-line no-useless-catch
+
+    const { items } = await getClient()
+      .getEntries({
+        content_type: 'categoryPage'
+      })
+
+    if (!items) {
+      return {
+        paths: null,
+        statusCode: 404
+      }
+    }
+
+    const paths = items.reduce((paths, path) => {
+      if (page === 'categoryPage') {
+        paths.push(`/${path.fields.slug}`)
+      } else if (page === 'photoPage') {
+        path.fields.photos.map(photo => {
+          paths.push(`/${path?.fields?.slug}/${photo?.fields?.slug}`)
+        })
+      }
+
+      return paths
+    }, [])
+
+    return {
+      paths,
+      statusCode: 200
+    }
+  } catch (error) {
+    throw error
+  }
+}

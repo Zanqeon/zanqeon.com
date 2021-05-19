@@ -36,7 +36,7 @@ export default function BlurHashPhoto ({
         alt={image.alt}
         layout="fill"
         quality={isHighQuality ? 85 : 75}
-        loading={isLazyLoading ? 'lazy' : 'priority'}
+        loading={isLazyLoading ? 'lazy' : undefined}
         sizes={sizes}
       />
     </div>
