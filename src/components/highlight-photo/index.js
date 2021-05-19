@@ -28,6 +28,7 @@ export default function HighlightPhoto ({
                   hasAnimatedHover
                   image={image}
                   aspectRatio={aspectRatio}
+                  isLazyLoading
                 />
               </div>
             </a>
