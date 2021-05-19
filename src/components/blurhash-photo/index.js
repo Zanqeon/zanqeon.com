@@ -12,6 +12,7 @@ export default function BlurHashPhoto ({
   isHighQuality,
   isLazyLoading,
   sizes
+
 }) {
   const [ height, width ] = aspectRatio.split('/')
   const backgroundColor = image.blurHash ? 'none' : '#f4f6f6'
