@@ -76,6 +76,19 @@
   }
 }
 
+@mixin bodyTextBold {
+  font-size: $body-text-bold-font-size;
+  font-weight: $body-text-bold-font-weight;
+  color: $body-text-bold-color;
+  font-family: $body-text-bold-font-family;
+  line-height: $body-text-bold-line-height;
+
+  @include breakpoint(sm) {
+    font-size: $body-text-bold-font-size--sm;
+    line-height: $body-text-bold-line-height--sm;
+  }
+}
+
 @mixin bodyLink {
   font-size: $body-link-font-size;
   font-weight: $body-link-font-weight;
