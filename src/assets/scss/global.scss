@@ -8,6 +8,7 @@
     url("/static/fonts/squarefont/SquareFont.woff2") format("woff2"),
     url("/static/fonts/squarefont/SquareFont.woff2") format("woff2");
   font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,6 +17,7 @@
     url("/static/fonts/forced-square/Forced-Square.woff2") format("woff2"),
     url("/static/fonts/forced-square/Forced-Square.woff") format("woff");
   font-weight: 300;
+  font-display: swap;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
