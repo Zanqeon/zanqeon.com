@@ -50,6 +50,13 @@ export async function getStaticProps ({ query }) {
   }
 }
 
+export async function getStaticPaths () {
+  return {
+    paths: [ '/' ],
+    fallback: 'blocking'
+  }
+}
+
 Index.propTypes = {
   pageData: PropTypes.shape({
     title: PropTypes.string
