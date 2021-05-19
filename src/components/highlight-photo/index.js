@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 import Layout from 'components/layout'
 import classNames from 'classnames'
 import BlurHashPhoto from 'components/blurhash-photo'
+import Image from 'next/image'
 
 export default function HighlightPhoto ({
   image,
@@ -29,6 +30,13 @@ export default function HighlightPhoto ({
                   image={image}
                   aspectRatio={aspectRatio}
                   isLazyLoading
+                  isHighQuality
+                  sizes="
+                        (max-width: 400px) 350px,
+                        (max-width: 800px) 600px,
+                        (max-width: 1200px) 900px,
+                        1000px
+                        "
                 />
               </div>
             </a>
