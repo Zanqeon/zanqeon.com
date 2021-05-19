@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { fetchPage } from 'services/contentful'
+import { fetchPage, fetchPaths } from 'services/contentful'
 import { CONTENT_TYPES } from 'services/contentful/constants'
 import PhotoPageView from 'views/pages/photo'
 import mapPhotoPage from 'services/contentful/utils/map-photo-page'
@@ -20,19 +20,16 @@ export default function PhotoPage ({
   )
 }
 
-export async function getServerSideProps ({ query }) {
-  const slug = query.photo
-  const category = query.slug
-  const isPreview = query.isPreview === 'true'
+export async function getStaticProps (context) {
+  const slug = context?.params?.photo
+  const category = context?.params?.slug
   const { pageData, statusCode } = await fetchPage(
     slug,
-    CONTENT_TYPES.PHOTOPAGE,
-    isPreview
+    CONTENT_TYPES.PHOTOPAGE
   )
   const categoryPhotosData = await fetchPage(
     category,
-    CONTENT_TYPES.CATEGORYPAGE,
-    isPreview
+    CONTENT_TYPES.CATEGORYPAGE
   )
 
   return {
@@ -41,6 +38,15 @@ export async function getServerSideProps ({ query }) {
       categoryPhotosData,
       statusCode
     }
+  }
+}
+
+export async function getStaticPaths () {
+  const data = await fetchPaths(CONTENT_TYPES.PHOTOPAGE)
+
+  return {
+    paths: data.paths,
+    fallback: 'blocking'
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { fetchPage } from 'services/contentful'
+import { fetchPage, fetchPaths } from 'services/contentful'
 import { CONTENT_TYPES } from 'services/contentful/constants'
 import CategoryPageView from 'views/pages/category'
 import mapCategoryPage from 'services/contentful/utils/map-category-page'
@@ -14,19 +14,26 @@ export default function CategoryPage ({
   )
 }
 
-export async function getServerSideProps ({ query }) {
-  const slug = query.slug
-  const isPreview = query.isPreview === 'true'
+export async function getStaticProps (context) {
+  const slug = context?.params?.slug
   const { pageData, statusCode } = await fetchPage(
     slug,
-    CONTENT_TYPES.CATEGORYPAGE,
-    isPreview
+    CONTENT_TYPES.CATEGORYPAGE
   )
   return {
     props: {
       pageData,
       statusCode
     }
+  }
+}
+
+export async function getStaticPaths () {
+  const data = await fetchPaths(CONTENT_TYPES.CATEGORYPAGE)
+
+  return {
+    paths: data.paths,
+    fallback: 'blocking'
   }
 }
 

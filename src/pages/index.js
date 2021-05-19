@@ -29,9 +29,9 @@ export default function Index ({
   )
 }
 
-export async function getServerSideProps ({ query }) {
+export async function getStaticProps ({ query }) {
   const slug = '/'
-  const isPreview = query.isPreview === 'true'
+  const isPreview = query?.isPreview === 'true'
   const { pageData, statusCode } = await fetchPage(
     slug,
     CONTENT_TYPES.HOMEPAGE,
