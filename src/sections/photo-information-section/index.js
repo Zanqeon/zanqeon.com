@@ -74,56 +74,58 @@ export default function PhotoInformation ({
         </Layout.Column>
       )}
       {!isPortrait && (
-        <Layout.Row>
-          <Layout.Column columns="md:4 lg:3" offset="sm:1 md:2 lg:2">
-            <ul className={listClassName}>
-              {iso && (
-                <li className={styles.item}>
-                  <span className={styles.title}>ISO: </span>
-                  {iso}
-                </li>
-              )}
-              {aperture && (
-                <li className={styles.item}>
-                  <span className={styles.title}>Aperture: </span>
-                  {aperture}
-                </li>
-              )}
-              {shutterSpeed && (
-                <li className={styles.item}>
-                  <span className={styles.title}>Shutter Speed: </span>
-                  {shutterSpeed}
-                </li>
-              )}
-            </ul>
-            <ul className={styles.list}>
-              {date && (
-                <li className={styles.item}>
-                  <span className={styles.title}>Date: </span>
-                  {date}
-                </li>
-              )}
-              {location?.href && location?.label && (
-                <li className={styles.item}>
-                  <span className={styles.title}>Location: </span>
-                  <Link href={location.href}>
-                    <a target="_blank">
-                      {location.label}
-                    </a>
-                  </Link>
-                </li>
-              )}
-            </ul>
-          </Layout.Column>
-          {description && (
-            <Layout.Column columns="sm:8 md:4" offset="sm:1 md:0 lg:1">
-              <div className={descriptionContainerClassName}>
-                <div className={styles.title}>Description:</div>
-                <RichText children={description} />
-              </div>
+        <Layout.Container>
+          <Layout.Row>
+            <Layout.Column columns="md:4 lg:3" offset="sm:1 md:2 lg:2">
+              <ul className={listClassName}>
+                {iso && (
+                  <li className={styles.item}>
+                    <span className={styles.title}>ISO: </span>
+                    {iso}
+                  </li>
+                )}
+                {aperture && (
+                  <li className={styles.item}>
+                    <span className={styles.title}>Aperture: </span>
+                    {aperture}
+                  </li>
+                )}
+                {shutterSpeed && (
+                  <li className={styles.item}>
+                    <span className={styles.title}>Shutter Speed: </span>
+                    {shutterSpeed}
+                  </li>
+                )}
+              </ul>
+              <ul className={styles.list}>
+                {date && (
+                  <li className={styles.item}>
+                    <span className={styles.title}>Date: </span>
+                    {date}
+                  </li>
+                )}
+                {location?.href && location?.label && (
+                  <li className={styles.item}>
+                    <span className={styles.title}>Location: </span>
+                    <Link href={location.href}>
+                      <a target="_blank">
+                        {location.label}
+                      </a>
+                    </Link>
+                  </li>
+                )}
+              </ul>
             </Layout.Column>
-          )}
-        </Layout.Row>
+            {description && (
+              <Layout.Column columns="sm:8 md:4" offset="sm:1 md:0 lg:1">
+                <div className={descriptionContainerClassName}>
+                  <div className={styles.title}>Description:</div>
+                  <RichText children={description} />
+                </div>
+              </Layout.Column>
+            )}
+          </Layout.Row>
+        </Layout.Container>
       )}
     </>
   )

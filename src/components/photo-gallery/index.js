@@ -9,6 +9,7 @@ import Link from 'next/link'
 import Gallery from 'react-photo-gallery'
 import * as defaultPropTypes from 'config/prop-types'
 import { BlurhashCanvas } from 'react-blurhash'
+import Image from 'next/image'
 
 function GalleryItem ({
   item,
@@ -26,10 +27,17 @@ function GalleryItem ({
           backgroundColor: item.blurHash ? '' : '#76e0ff'
         }}
       >
-        <img
+        <Image
           className={styles.image}
           src={item.src}
           alt={item.alt}
+          layout="fill"
+          sizes="
+          (max-width: 800px) 500px,
+          (max-width: 1200px) 700px,
+          (max-width: 1500px) 800px,
+          1200px
+          "
         />
         {item?.blurHash?.length > 6 && (
           <BlurhashCanvas
@@ -78,7 +86,7 @@ export default function PhotoGallery ({
         key={photo.src}
       />
     ),
-    []
+    [ photos ]
   )
 
   // placeholder gallery to show on server side so google can see the data
@@ -90,7 +98,7 @@ export default function PhotoGallery ({
             <li key={photo.src}>
               <a href={`/${currentPageSlug}/${photo.slug}`}>
                 <img
-                  src={photo.src}
+                  src={`${photo.src}?w=400&q=75`}
                   alt={photo.alt}
                 />
               </a>

@@ -24,6 +24,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
+                highQuality
               />
             </div>
           </Layout.Column>
@@ -64,6 +65,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
+                highQuality
               />
             </div>
           </Layout.Column>
@@ -101,6 +103,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
+                highQuality
               />
             </div>
           </Layout.Column>
@@ -119,17 +122,17 @@ export default function PhotoPageHeaderSection ({
         />
       </Layout.Container>
     )
-  }
-  else {
+  } else {
     return (
       <Layout.Container>
         <Layout.Row>
-          <Layout.Column columns="xs:12 sm:10" offset="sm:1">
+          <Layout.Column columns="xs:12 md:10" offset="md:1">
             <div className={styles.imageContainer}>
               <BlurHashPhoto
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
+                highQuality
               />
             </div>
           </Layout.Column>

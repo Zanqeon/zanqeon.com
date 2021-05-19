@@ -1,4 +1,5 @@
 import mapAspectRatio from 'services/contentful/utils/map-aspect-ratio'
+import mapImage from 'services/contentful/utils/map-image'
 
 const getHeightFromAspectRatio = (aspectRatio) => {
   return Number(aspectRatio.split('/')[0])
@@ -13,8 +14,7 @@ const mapPhotos = (items) => {
     return [
       ...photos,
       {
-        src: `https:${photo?.fields?.photograph?.fields?.file?.url}`,
-        alt: photo?.fields?.photograph?.fields?.description,
+        ...mapImage(photo?.fields?.photograph),
         blurHash: photo?.fields?.blurhash,
         slug: photo.fields.slug,
         label: photo.fields.title,

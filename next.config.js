@@ -9,7 +9,9 @@ module.exports = {
   images: {
     domains: [
       'images.ctfassets.net', // Contentful images
+      'downloads.ctfassets.net', // Contentful images
       'images.unsplash.com' // Storybook placeholder images
-    ]
+    ],
+    deviceSizes: [ 82, 110, 140, 640, 750, 828, 1080, 1200, 1920, 2048 ]
   }
 }
