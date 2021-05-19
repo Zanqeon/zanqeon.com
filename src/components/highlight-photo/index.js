@@ -14,20 +14,22 @@ export default function HighlightPhoto ({
 }) {
   const splitLabel = link.label.split(' ')
 
-  const containerClassName = classNames(styles.container, {
+  const containerClassName = classNames({
     [styles.containerReversed]: isReversed
   })
   return (
     <div className={containerClassName}>
       <Layout.Row isReversed={isReversed}>
-        <Layout.Column columns="xs:11 sm:9 md:8" offset={isReversed ? 'xs:1 sm:3 md:0 lg:1' : 'md:1'}>
+        <Layout.Column columns="xs:10 sm:9 md:8" offset={isReversed ? 'xs:2 sm:3 md:0 lg:1' : 'md:1'}>
           <Link href={`/${link.href}`}>
             <a>
-              <BlurHashPhoto
-                hasAnimatedHover
-                image={image}
-                aspectRatio={aspectRatio}
-              />
+              <div className={styles.imageContainer}>
+                <BlurHashPhoto
+                  hasAnimatedHover
+                  image={image}
+                  aspectRatio={aspectRatio}
+                />
+              </div>
             </a>
           </Link>
         </Layout.Column>

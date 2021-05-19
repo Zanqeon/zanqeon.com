@@ -26,20 +26,22 @@
 }
 
 .titleAfterHyphen {
-  margin-top:-0.8rem;
+  margin-top: -0.8rem;
 
   @include breakpoint(sm) {
-    margin-top:-1.6rem;
+    margin-top: -1.6rem;
   }
 }
 
 .list {
   z-index: index($elementsHomepage, imageList);
-  margin-top: -4rem;
+  margin-top: -3.6rem;
+  margin-bottom: 1.6rem;
 
   @include breakpoint(sm) {
     padding-bottom: 10vw;
     margin-top: -6rem;
+    margin-bottom: 0;
   }
 
   @include breakpoint(md) {
