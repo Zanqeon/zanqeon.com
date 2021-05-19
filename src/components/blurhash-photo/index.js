@@ -8,7 +8,8 @@ export default function BlurHashPhoto ({
   image,
   aspectRatio,
   hasNegativeZIndex,
-  hasAnimatedHover
+  hasAnimatedHover,
+  highQuality
 }) {
   const [ height, width ] = aspectRatio.split('/')
   const backgroundColor = image.blurHash ? 'none' : '#f4f6f6'
@@ -20,7 +21,7 @@ export default function BlurHashPhoto ({
       {image?.blurHash?.length > 6 && (
         <BlurhashCanvas
           className={styles.blurhash}
-          hash={image.blurHash}
+          hash={image?.blurHash}
           width={100 * width}
           height={100 * height}
           punch={1}
@@ -31,6 +32,7 @@ export default function BlurHashPhoto ({
         src={image.src}
         alt={image.alt}
         layout="fill"
+        quality={highQuality ? 85 : 75}
       />
     </div>
   )
@@ -44,7 +46,8 @@ BlurHashPhoto.propTypes = {
   }),
   aspectRatio: PropTypes.string,
   hasNegativeZIndex: PropTypes.bool,
-  hasAnimatedHover: PropTypes.bool
+  hasAnimatedHover: PropTypes.bool,
+  highQuality: PropTypes.bool
 }
 
 BlurHashPhoto.defaultProps = {

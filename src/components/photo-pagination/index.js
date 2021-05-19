@@ -13,13 +13,17 @@ export default function PhotoPagination ({
   const itemNext = photos[currentItemIndex + 1] ? photos[currentItemIndex + 1] : photos[0]
   const itemPrevious = photos[currentItemIndex - 1] ? photos[currentItemIndex - 1] : photos[photos.length - 1]
 
+  const doubleDigits = (number) => {
+    return number < 10 ? '0' + number : number
+  }
+
   return (
     <>
       <div className={styles.counter}>
         {photos.map((photo, index) => (
-          photo.slug === currentSlug ? '0' + (index + 1) : null
+          photo.slug === currentSlug ? doubleDigits(index + 1) : null
         ))}
-        <span className={styles.counterTotal}>{'0' + photos.length}</span>
+        <span className={styles.counterTotal}>{doubleDigits(photos.length)}</span>
       </div>
       <div className={styles.pagination}>
         <Link href={`/${categorySlug}/${itemPrevious.slug}`}>

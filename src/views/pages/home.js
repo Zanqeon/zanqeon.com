@@ -21,7 +21,7 @@ export default function HomePageView ({
           sectionTitle: indicatorInfo.title,
           onChangeInView: setSectionIdInView,
           options: {
-            threshold: 0.1
+            threshold: indicatorInfo.title === 'gallery' ? 0.4 : 0.25
           }
         })
       } else {
