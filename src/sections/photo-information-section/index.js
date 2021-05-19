@@ -76,7 +76,7 @@ export default function PhotoInformation ({
       {!isPortrait && (
         <Layout.Container>
           <Layout.Row>
-            <Layout.Column columns="md:4 lg:3" offset="sm:1 md:2 lg:2">
+            <Layout.Column columns="md:4 lg:3" offset="sm:1">
               <ul className={listClassName}>
                 {iso && (
                   <li className={styles.item}>
@@ -117,7 +117,7 @@ export default function PhotoInformation ({
               </ul>
             </Layout.Column>
             {description && (
-              <Layout.Column columns="sm:8 md:4" offset="sm:1 md:0 lg:1">
+              <Layout.Column columns="sm:8 md:5" offset="sm:1 lg:2">
                 <div className={descriptionContainerClassName}>
                   <div className={styles.title}>Description:</div>
                   <RichText children={description} />
