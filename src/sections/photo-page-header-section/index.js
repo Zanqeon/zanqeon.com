@@ -24,7 +24,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
-                highQuality
+                isHighQuality
               />
             </div>
           </Layout.Column>
@@ -65,7 +65,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
-                highQuality
+                isHighQuality
               />
             </div>
           </Layout.Column>
@@ -103,7 +103,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
-                highQuality
+                isHighQuality
               />
             </div>
           </Layout.Column>
@@ -132,7 +132,7 @@ export default function PhotoPageHeaderSection ({
                 hasNegativeZIndex
                 image={image}
                 aspectRatio={aspectRatio}
-                highQuality
+                isHighQuality
               />
             </div>
           </Layout.Column>

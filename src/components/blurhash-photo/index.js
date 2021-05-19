@@ -9,8 +9,9 @@ export default function BlurHashPhoto ({
   aspectRatio,
   hasNegativeZIndex,
   hasAnimatedHover,
-  highQuality,
-  isLazyLoading
+  isHighQuality,
+  isLazyLoading,
+  sizes
 }) {
   const [ height, width ] = aspectRatio.split('/')
   const backgroundColor = image.blurHash ? 'none' : '#f4f6f6'
@@ -33,8 +34,9 @@ export default function BlurHashPhoto ({
         src={image.src}
         alt={image.alt}
         layout="fill"
-        quality={highQuality ? 85 : 75}
+        quality={isHighQuality ? 85 : 75}
         loading={isLazyLoading ? 'lazy' : 'priority'}
+        sizes={sizes}
       />
     </div>
   )
@@ -49,11 +51,15 @@ BlurHashPhoto.propTypes = {
   aspectRatio: PropTypes.string,
   hasNegativeZIndex: PropTypes.bool,
   hasAnimatedHover: PropTypes.bool,
-  highQuality: PropTypes.bool
+  isHighQuality: PropTypes.bool,
+  isLazyLoading: PropTypes.bool,
+  sizes: PropTypes.string
 }
 
 BlurHashPhoto.defaultProps = {
   aspectRatio: '2/3',
   hasNegativeZIndex: false,
-  hasAnimatedHover: false
+  hasAnimatedHover: false,
+  isHighQuality: false,
+  isLazyLoading: false
 }
