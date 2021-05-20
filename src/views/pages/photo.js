@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
+import Head from 'components/head'
 import PhotoPageHeaderSection from 'sections/photo-page-header-section'
 import PhotoNavigationMobile from 'components/photo-navigation-mobile'
 
@@ -10,13 +10,12 @@ export default function PhotoPageView ({
   aspectRatio,
   categoryInfo,
   slug,
-  photoInfo
+  photoInfo,
+  metadata
 }) {
   return (
     <>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </Head>
+      <Head {...metadata} />
       <PhotoPageHeaderSection
         title={title}
         image={image}
@@ -56,5 +55,6 @@ PhotoPageView.propTypes = {
     alt: PropTypes.string
   }),
   categoryInfo: PropTypes.object,
-  slug: PropTypes.string
+  slug: PropTypes.string,
+  metadata: PropTypes.object
 }
