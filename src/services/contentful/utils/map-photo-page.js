@@ -41,6 +41,12 @@ export default function mapPhotoPage (data) {
       }
     },
     aspectRatio: mapAspectRatio(data.fields.aspectRatio),
-    slug: data.fields.slug
+    slug: data.fields.slug,
+    metadata: {
+      title: data.fields.seoTitle,
+      description: data.fields.seoDescription,
+      image: mapImage(data?.fields?.photograph),
+      pageType: data?.sys?.contentType?.sys?.id
+    }
   }
 }

@@ -31,6 +31,12 @@ export default function mapCategoryPage (data) {
     type: data.sys.contentType.sys.id,
     title: data.fields.title,
     photos: mapPhotos(data.fields.photos),
-    currentPageSlug: data.fields.slug
+    currentPageSlug: data.fields.slug,
+    metadata: {
+      title: data.fields.seoTitle,
+      description: data.fields.seoDescription,
+      image: mapImage(data?.fields?.socialImage),
+      pageType: data?.sys?.contentType?.sys?.id
+    }
   }
 }

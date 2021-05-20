@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
+import Head from 'components/head'
 import ContentBlocksSectionView from 'views/sections/content-blocks'
 import ActiveSectionIndicator from 'components/active-section-indicator'
 
 export default function HomePageView ({
   contentBlocks = [],
   countriesData,
-  sectionIndicatorList
+  sectionIndicatorList,
+  metadata
 }) {
   const [ sectionIdInView, setSectionIdInView ] = useState(null)
 
@@ -35,9 +36,7 @@ export default function HomePageView ({
 
   return (
     <>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </Head>
+      <Head {...metadata} />
       <ActiveSectionIndicator
         activeSectionId={sectionIdInView}
         sections={sectionIndicatorList}
@@ -53,7 +52,8 @@ export default function HomePageView ({
 HomePageView.propTypes = {
   contentBlocks: PropTypes.arrayOf(PropTypes.object),
   countriesData: PropTypes.arrayOf(PropTypes.object),
-  sectionIndicatorList: PropTypes.arrayOf(PropTypes.object)
+  sectionIndicatorList: PropTypes.arrayOf(PropTypes.object),
+  metadata: PropTypes.object
 }
 
 HomePageView.defaultProps = {}

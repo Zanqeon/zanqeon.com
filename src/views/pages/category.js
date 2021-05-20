@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
+import Head from 'components/head'
 import PhotoGallerySection from 'sections/photo-gallery-section'
 import * as defaultPropTypes from 'config/prop-types'
 import CategoryHeader from 'components/header-category'
@@ -8,13 +8,12 @@ import CategoryHeader from 'components/header-category'
 export default function CategoryPageView ({
   title,
   photos,
-  currentPageSlug
+  currentPageSlug,
+  metadata
 }) {
   return (
     <>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </Head>
+      <Head {...metadata} />
       <CategoryHeader
         title={title}
       />
@@ -26,5 +25,6 @@ export default function CategoryPageView ({
 CategoryPageView.propTypes = {
   title: PropTypes.string,
   photos: defaultPropTypes.photos,
-  currentPageSlug: PropTypes.string
+  currentPageSlug: PropTypes.string,
+  metadata: PropTypes.object
 }

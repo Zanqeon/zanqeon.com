@@ -5,6 +5,7 @@ import { CONTENT_TYPES } from 'services/contentful/constants'
 import PhotoPageView from 'views/pages/photo'
 import mapPhotoPage from 'services/contentful/utils/map-photo-page'
 import mapCategoryInfo from 'services/contentful/utils/map-category-info'
+import Head from 'components/head'
 
 export default function PhotoPage ({
   pageData,
