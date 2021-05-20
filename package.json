@@ -22,6 +22,7 @@
     "contentful": "^7.15.2",
     "invariant": "^2.2.4",
     "next": "10.0.3",
+    "next-absolute-url": "^1.2.2",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-blurhash": "^0.1.3",
