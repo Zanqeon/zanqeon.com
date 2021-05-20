@@ -134,6 +134,10 @@ export async function fetchPaths (page) {
       return paths
     }, [])
 
+    if (page === 'homepage') {
+      paths.push('/')
+    }
+
     return {
       paths,
       statusCode: 200
