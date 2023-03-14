@@ -31,7 +31,7 @@ function GalleryItem ({
         className={styles.image}
         src={item.src}
         alt={item.alt}
-        layout="fill"
+        fill
         sizes="
         (max-width: 800px) 500px,
         (max-width: 1200px) 700px,
