@@ -57,11 +57,9 @@ export default function PhotoInformation ({
             {location?.href && location?.label && (
               <li className={styles.item}>
                 <span className={styles.title}>Location: </span>
-                <Link href={location.href}>
-                  <a target="_blank">
-                    {location.label}
-                  </a>
-                </Link>
+                <a href={location.href} target="_blank" rel="noreferrer">
+                  {location.label}
+                </a>
               </li>
             )}
             {description && (

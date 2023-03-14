@@ -17,38 +17,37 @@ function GalleryItem ({
   currentPageSlug
 }) {
   return (
-    <Link href={`/${currentPageSlug}/${item.slug}`}>
-      <a
-        className={styles.link}
-        style={{
-          height: item.height,
-          width: item.width,
-          margin: margin,
-          backgroundColor: item.blurHash ? '' : '#76e0ff'
-        }}
-      >
-        <Image
-          className={styles.image}
-          src={item.src}
-          alt={item.alt}
-          layout="fill"
-          sizes="
-          (max-width: 800px) 500px,
-          (max-width: 1200px) 700px,
-          (max-width: 1500px) 800px,
-          1200px
-          "
+    <Link
+      href={`/${currentPageSlug}/${item.slug}`}
+      className={styles.link}
+      style={{
+        height: item.height,
+        width: item.width,
+        margin: margin,
+        backgroundColor: item.blurHash ? '' : '#76e0ff'
+      }}
+    >
+      <Image
+        className={styles.image}
+        src={item.src}
+        alt={item.alt}
+        layout="fill"
+        sizes="
+        (max-width: 800px) 500px,
+        (max-width: 1200px) 700px,
+        (max-width: 1500px) 800px,
+        1200px
+        "
+      />
+      {item?.blurHash?.length > 6 && (
+        <BlurhashCanvas
+          className={styles.blurhash}
+          hash={item.blurHash}
+          width={Math.round(0.05 * item.width)}
+          height={Math.round(0.05 * item.height)}
+          punch={1}
         />
-        {item?.blurHash?.length > 6 && (
-          <BlurhashCanvas
-            className={styles.blurhash}
-            hash={item.blurHash}
-            width={Math.round(0.05 * item.width)}
-            height={Math.round(0.05 * item.height)}
-            punch={1}
-          />
-        )}
-      </a>
+      )}
     </Link>
   )
 }

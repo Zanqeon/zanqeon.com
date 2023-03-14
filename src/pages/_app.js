@@ -5,21 +5,18 @@ import ErrorPage from 'pages/_error'
 // Load CSS which will be available on all pages
 import 'assets/scss/global.scss'
 
-export default class MyApp extends React.Component {
-  static propTypes = {
-    Component: PropTypes.func.isRequired,
-    pageProps: PropTypes.object.isRequired,
-    error: PropTypes.object,
-    initialState: PropTypes.object
-  }
-
-  render () {
-    const { Component, pageProps, error } = this.props
-
-    return (
-      error
-        ? <ErrorPage {...error} />
-        : <Component {...pageProps} />
-    )
-  }
+function MyApp ({ Component, pageProps, error }) {
+  return (
+    error
+      ? <ErrorPage {...error} />
+      : <Component {...pageProps} />
+  )
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object,
+  error: PropTypes.object
+}
+
+export default MyApp

@@ -10,16 +10,12 @@ export default function HeaderCategory ({
   return (
     <>
       <div className={styles.container}>
-        <Link href="/">
-          <a className={`${styles.link} ${styles.linkLeft}`}>
-            <Icons.Logo className={`${styles.icon} ${styles.iconLogo}`} />
-          </a>
+        <Link href="/" className={`${styles.link} ${styles.linkLeft}`}>
+          <Icons.Logo className={`${styles.icon} ${styles.iconLogo}`} />
         </Link>
         <h1 className={styles.title}>{title}</h1>
-        <Link href="/">
-          <a className={`${styles.link} ${styles.linkRight}`}>
-            <Icons.Close className={`${styles.icon} ${styles.iconClose}`} />
-          </a>
+        <Link href="/" className={`${styles.link} ${styles.linkRight}`}>
+          <Icons.Close className={`${styles.icon} ${styles.iconClose}`} />
         </Link>
       </div>
       <h1 className={styles.title}>{title}</h1>
