@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Icons from 'components/icons'
-import PhotoCounter from 'components/photo-pagination'
 import Layout from 'components/layout'
 import styles from './index.module.scss'
 
@@ -24,20 +23,16 @@ export default function PhotoNavigationMobile ({
         <Layout.Row>
           <Layout.Column columns="xs:10" offset="xs:1">
             <div className={styles.contentContainer}>
-              <Link href={`/${categoryInfo.categorySlug}/${itemPrevious.slug}`}>
-                <a className={styles.link}>
-                  <Icons.ArrowLeftStraight className={styles.icon} />
-                  <div className={`${styles.indicator} ${styles.indicatorLeft}`}>Prv</div>
-                </a>
+              <Link href={`/${categoryInfo.categorySlug}/${itemPrevious.slug}`} className={styles.link}>
+                <Icons.ArrowLeftStraight className={styles.icon} />
+                <div className={`${styles.indicator} ${styles.indicatorLeft}`}>Prv</div>
               </Link>
               <div className={styles.counter}>
                 {currentPhotoNumber}/{photoLength}
               </div>
-              <Link href={`/${categoryInfo.categorySlug}/${itemNext.slug}`}>
-                <a className={styles.link}>
-                  <Icons.ArrowRightStraight className={styles.icon} />
-                  <div className={`${styles.indicator} ${styles.indicatorRight}`}>Nxt</div>
-                </a>
+              <Link href={`/${categoryInfo.categorySlug}/${itemNext.slug}`} className={styles.link}>
+                <Icons.ArrowRightStraight className={styles.icon} />
+                <div className={`${styles.indicator} ${styles.indicatorRight}`}>Nxt</div>
               </Link>
             </div>
           </Layout.Column>

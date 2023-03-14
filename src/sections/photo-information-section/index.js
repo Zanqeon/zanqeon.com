@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'next/link'
 import RichText from 'components/rich-text'
 import Layout from 'components/layout'
 import classNames from 'classnames'
@@ -57,11 +56,9 @@ export default function PhotoInformation ({
             {location?.href && location?.label && (
               <li className={styles.item}>
                 <span className={styles.title}>Location: </span>
-                <Link href={location.href}>
-                  <a target="_blank">
-                    {location.label}
-                  </a>
-                </Link>
+                <a href={location.href} target="_blank" rel="noreferrer">
+                  {location.label}
+                </a>
               </li>
             )}
             {description && (
@@ -107,11 +104,9 @@ export default function PhotoInformation ({
                 {location?.href && location?.label && (
                   <li className={styles.item}>
                     <span className={styles.title}>Location: </span>
-                    <Link href={location.href}>
-                      <a target="_blank">
-                        {location.label}
-                      </a>
-                    </Link>
+                    <a href={location.href} target="_blank" rel="noreferrer">
+                      {location.label}
+                    </a>
                   </li>
                 )}
               </ul>

@@ -34,7 +34,7 @@ export default function BlurHashPhoto ({
         className={hasAnimatedHover ? [ styles.image ] : ''}
         src={image.src}
         alt={image.alt}
-        layout="fill"
+        fill
         quality={isHighQuality ? 85 : 75}
         loading={isLazyLoading ? 'lazy' : undefined}
         sizes={sizes}

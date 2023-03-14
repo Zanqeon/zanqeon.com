@@ -9,9 +9,7 @@ export default function Contact ({
 }) {
   return (
     <div className={styles.container}>
-      <Link href={`mailto:${email}`}>
-        <a className={styles.link}>{label}</a>
-      </Link>
+      <Link href={`mailto:${email}`} className={styles.link}>{label}</Link>
     </div>
   )
 }

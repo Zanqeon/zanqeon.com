@@ -26,15 +26,11 @@ export default function PhotoPagination ({
         <span className={styles.counterTotal}>{doubleDigits(photos.length)}</span>
       </div>
       <div className={styles.pagination}>
-        <Link href={`/${categorySlug}/${itemPrevious.slug}`}>
-          <a className={styles.link}>
-            <Icons.ArrowLeftHooked className={styles.icon} />
-          </a>
+        <Link href={`/${categorySlug}/${itemPrevious.slug}`} className={styles.link}>
+          <Icons.ArrowLeftHooked className={styles.icon} />
         </Link>
-        <Link href={`/${categorySlug}/${itemNext.slug}`}>
-          <a className={styles.link}>
-            <Icons.ArrowRightHooked className={styles.icon} />
-          </a>
+        <Link href={`/${categorySlug}/${itemNext.slug}`} className={styles.link}>
+          <Icons.ArrowRightHooked className={styles.icon} />
         </Link>
       </div>
     </>

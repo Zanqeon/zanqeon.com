@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './index.module.scss'
-import Link from 'next/link'
 import classNames from 'classnames'
 
 export default function LinkList ({
@@ -28,11 +27,9 @@ export default function LinkList ({
 
         return (
           <li key={item.label} className={styles.item}>
-            <Link href={item.href}>
-              <a className={itemClassName} target="_blank">
-                {item.label}
-              </a>
-            </Link>
+            <a href={item.href} className={itemClassName} target="_blank" rel="noreferrer">
+              {item.label}
+            </a>
           </li>
         )
       })}

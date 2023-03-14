@@ -13,19 +13,15 @@ export default function PhotoNavigationHeader ({
   return (
     <div className={styles.container}>
       <div className={styles.showOnMobile}>
-        <Link href="/">
-          <a className={`${styles.link} ${styles.linkLeft}`}>
-            <Icons.Logo className={`${styles.icon} ${styles.iconLogo}`} />
-          </a>
+        <Link href="/" className={`${styles.link} ${styles.linkLeft}`}>
+          <Icons.Logo className={`${styles.icon} ${styles.iconLogo}`} />
         </Link>
         <h1 className={styles.title}>{categoryInfo.category}</h1>
       </div>
       <Layout.Row>
         <Layout.Column columns="xs:11">
-          <Link href={`/${categoryInfo.categorySlug}`}>
-            <a className={`${styles.link} ${styles.linkRight}`}>
-              <Icons.Close className={`${styles.icon} ${styles.iconClose}`} />
-            </a>
+          <Link href={`/${categoryInfo.categorySlug}`} className={`${styles.link} ${styles.linkRight}`}>
+            <Icons.Close className={`${styles.icon} ${styles.iconClose}`} />
           </Link>
         </Layout.Column>
       </Layout.Row>
